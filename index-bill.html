@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+  <!--*****************************************************-->
+  <!-- این متا ها لازمه که برای سئو روی سایت گذاشته بشن -->
+  <!--*****************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Language" content="fa">
+  <!-- ************************************************ -->
+  <title>آنلاین خوان</title>
+  <!-- ************************************************ -->
+  <!-- این متا ها لازمه که برای سئو روی سایت گذاشته بشن -->
+  <meta name="language" content="Farsi" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="آزمون,برگزاری آزمون,آزمون آنلاین,آنلاین خوان" />
+  <meta name="keywords" content="All keyword phrases,associated with this page,onlinekhan,آنلاین خوان" />
+  <meta name="classification" content="online education,quiz,online test" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="google-site-verification" content="UniqueProprietaryCode4Site" />
+  <meta name="robots" content="index, follow" />
+  <meta name="creator" content="onlinekhan,آنلاین خوان" />
+  <meta name="publisher" content="onlinekhan,آنلاین خوان" />
+  <!-- ************************************************ -->
+  <!-- فا آیکن سایت -->
+  <link type="images/ico" href="assets/img/quasar-logo.png" rel="icon" />
+  <link rel="apple-touch-icon" href="assets/img/quasar-logo.pn">
+  <!--*****************************************************-->
+  <!-- پیوند به فایل های استایل شیت و اسکریپت -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
+  <!--*****************************************************-->
+  <!--*****************************************************-->
+</head>
+
+<body class="shrink">
+
+  <!-- شروع منوی ثابت سمت راست -->
+  <nav class="c-nav overflow-hidden">
+    <div class="sidebar-top">
+      <span class="shrink-btn border-bottom border-2">
+        <span class="link hide fs-5 ">پنل دانش آموزی</span>
+        <div class="icon">
+          <img src="assets/img/collapse-menu-icon.png">
+        </div>
+      </span>
+    </div>
+
+    <span id="jump-top" class="jump-top border-bottom jump d-none justify-content-center">
+      <i class="fa-solid fa-angle-up"></i>
+    </span>
+
+    <div id="sidebar-links" class="sidebar-links">
+      <ul>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span class="c-tooltip-text">پروفایل</span>
+            </div>
+            <div class="d-flex flex-column text-end align-items-end">
+              <span class="link hide">ابوالفضل ابراهیمی</span>
+              <span class="link hide child-link">دانش آموز</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-light fa-bell position-relative">
+                <span class="badge bg-danger position-absolute iran-sans  font-10">4</span>
+              </i>
+              <span class="c-tooltip-text">اعلان ها</span>
+            </div>
+            <span class="link hide font-12">اعلان ها</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-book"></i>
+              <span class="c-tooltip-text">درس</span>
+            </div>
+            <span class="link hide font-12">درس</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-boxes-packing"></i>
+              <span class="c-tooltip-text">پکیج دروس</span>
+            </div>
+            <span class="link hide">پکیج دروس</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-regular fa-file-invoice"></i>
+              <span class="c-tooltip-text">تکلیف</span>
+            </div>
+            <span class="link hide">تکلیف</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span class="c-tooltip-text">آزمون</span>
+            </div>
+            <span class="link hide">آزمون</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="c-tooltip-text">دبیر</span>
+            </div>
+            <span class="link hide">دبیر</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-regular fa-photo-film-music"></i>
+              <span class="c-tooltip-text">رسانه</span>
+            </div>
+            <span class="link hide">رسانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-calendar-lines-pen"></i>
+              <span class="c-tooltip-text">برنامه هفتگی</span>
+            </div>
+            <span class="link hide">برنامه هفتگی</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-envelope-open-dollar"></i>
+              <span class="c-tooltip-text">پرداخت ها</span>
+            </div>
+            <span class="link hide">پرداخت ها</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-wallet"></i>
+              <span class="c-tooltip-text">کیف پول</span>
+            </div>
+            <span class="link hide">کیف پول</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-headset"></i>
+              <span class="c-tooltip-text">مشاور</span>
+            </div>
+            <span class="link hide">مشاور</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <span id="jump-down" class="jump-down border-top jump d-none justify-content-center">
+      <i class="fa-solid fa-angle-down"></i>
+    </span>
+
+    <div class="sidebar-footer d-flex">
+      <a href="#" class="log-out">
+        <i class="fa-solid fa-power-off"></i>
+      </a>
+
+      <span class="shrink-btn shrink-mobile-hide-btn d-none">
+        <div class="icon">
+          <img src="assets/img/ecollapse-menu-icon.png">
+        </div>
+      </span>
+    </div>
+  </nav>
+  <!-- پایان منوی ثابت سمت راست -->
+
+  <!-- منوی بالا هدر اول -->
+  <nav class="container-nav-top px-3 px-lg-4 border-bottom border-2">
+    <div class="nav-top d-flex flex-wrap align-items-center h-100">
+
+      <div class="container-bars d-none header-font-color fs-1">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <ul class="nav me-auto container-menu">
+        <li class="nav-item pe-2"><a href="#"
+            class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">تماس با ما</a></li>
+        <li class="nav-item pe-2"><a href="#"
+            class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">درباره ما</a></li>
+        <li class="nav-item pe-2"><a href="#"
+            class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">مشاوره تحصیلی</a></li>
+        <li class="nav-item pe-2"><a href="#"
+            class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">خرید پکیچ درسی</a></li>
+      </ul>
+
+      <ul class="nav">
+        <li class="nav-item pe-3">
+          <a href="#"
+            class="d-flex align-items-center me-md-auto text-decoration-none header-font-color menu-item-hover">
+            <span class="fs-6 pe-2 font-12">راهنما</span>
+            <i class="fa-solid fa-address-card font-12"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="d-flex align-items-center text-decoration-none header-font-color menu-item-hover">
+            <span class="fs-6 pe-2 font-12">ساخت آزمون</span>
+            <i class="fa-solid fa-address-card font-12"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- پایان منو.ی بالا هدر اول -->
+  <div class="container-fluid container-dashboard p-0 position-relative" dir="rtl">
+    <main class="py-3 px-3 px-lg-4">
+
+      <!-- kebab menu absolute -->
+      <div class="container-kebab-menu position-absolute">
+        <ul class="nav p-0">
+          <div class="kebab-menu">
+            <figure></figure>
+            <figure class="middle"></figure>
+            <p class="cross">x</p>
+            <figure></figure>
+            <ul class="dropdown p-2 shadow">
+              <li>
+                <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+      <!-- kebab menu absolute -->
+      <!-- logo - search - profile menu -->
+      <!-- لوگوی سایت -->
+      <div class="row">
+        <div class="col-6 col-md-3 col-lg-3 col-xl-2">
+          <a href="#" class="d-block container-logo">
+            <img src="assets/img/logo.png">
+          </a>
+        </div>
+        <!-- لگوی سایت -->
+        <!-- منوی دسته بندی دروس -->
+        <div class="col-3 col-md-5 col-lg-5 col-xl-5 pe-xl-4 ps-lg-4">
+          <div class="container-search-category h-100 align-items-center d-none d-lg-flex">
+            <div class="course-category position-relative align-items-center d-flex">
+              <ul class="w-100 m-0 p-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link d-flex align-items-center dashboard-font-color" href="#" data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside">
+                    <i class="fa-solid fa-grid ps-2 fs-5"></i>
+                    <span class="fs-5">
+                      دروس
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu shadow-sm text-end border-0">
+                    <li class="dropstart">
+                      <a href="#" class="d-flex align-items-center dropdown-item dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        هنر
+                        <i class="fa-solid fa-angle-left me-auto"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-hover shadow-sm text-end border-0">
+                        <li><a class="dropdown-item" href="">نقاشی</a></li>
+                        <li><a class="dropdown-item" href="">خوشنویسی</a></li>
+                        <li><a class="dropdown-item" href="">سفالگری</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="d-flex dropdown-item" href="#">فارسی</a></li>
+                    <li><a class="d-flex dropdown-item" href="#">فیزیک</a></li>
+                    <li><a class="d-flex dropdown-item" href="#">ریاضیات</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="search-category w-100 d-flex">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="جستجوی درس..." aria-label="Search">
+                <button class="btn d-flex align-items-center" type="submit">
+                  <i class="fa-solid fa-magnifying-glass text-white fs-5"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- پایان منوی دسته بندی دروس -->
+
+        <!-- پروفایل کاربر آبی و سمت موبایل -->
+        <div class="col-3 col-md-4 col-lg-4 col-xl-5">
+          <div class="d-flex flex-row-reverse gap-3 align-items-center">
+            <div class="container-profile-menu d-flex h-100 align-items-center" dir="ltr">
+              <div class="notification-icon pe-3 d-none d-lg-flex">
+                <i class="fa-regular fa-bell position-relative fs-1">
+                  <span class="badge bg-danger position-absolute iran-sans">3</span>
+                </i>
+              </div>
+
+              <span class="profile-mobile-btn d-flex d-lg-none text-white align-items-center justify-content-center">
+                <i class="fa-thin fa-user-large px-2"></i>
+              </span>
+
+              <div class="dropdown rounded-5 px-1 align-items-center d-none d-lg-flex" dir="rtl">
+                <span
+                  class="profile-mobile-btn-close d-flex d-lg-none align-items-center justify-content-center position-absolute">
+                  <i class="fa-light fa-circle-xmark px-2 fs-5"></i>
+                </span>
+                <button class="btn dropdown-toggle text-white align-items-center d-none d-lg-flex" type="button"
+                  id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-thin fa-user-large px-2 fs-5"></i>
+                  <span>سلام، ابوالفضل ابراهیمی</span>
+                  <i class="fa-regular fa-angle-down px-2 fs-5"></i>
+                </button>
+                <ul class="dropdown-menu text-end" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">پروفایل کاربر</button></li>
+                  <li><button class="dropdown-item" type="button">خروج</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="container-search-category show-mobile h-100 align-items-center d-flex d-lg-none position-relative">
+
+              <span class="search-mobile-btn d-flex text-white align-items-center justify-content-center">
+                <i class="fa-light fa-magnifying-glass"></i>
+              </span>
+
+              <div class="content-menu position-absolute d-none flex-column-reverse p-2">
+                <div class="course-category position-relative align-items-center mt-2">
+                  <ul class="w-100 m-0 p-0">
+                    <li class="nav-item dropdown">
+                      <ul class="dropdown-menu shadow-sm text-end border-0 show position-relative">
+                        <li class="dropstart">
+                          <a href="#" class="d-flex align-items-center dropdown-item dropdown-toggle"
+                            data-bs-toggle="dropdown">
+                            هنر
+                            <i class="fa-solid fa-angle-left me-auto"></i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-hover shadow-sm text-end border-0">
+                            <li><a class="dropdown-item" href="">نقاشی</a></li>
+                            <li><a class="dropdown-item" href="">خوشنویسی</a></li>
+                            <li><a class="dropdown-item" href="">سفالگری</a></li>
+                          </ul>
+                        </li>
+                        <li><a class="d-flex dropdown-item mt-1" href="#">فارسی</a></li>
+                        <li><a class="d-flex dropdown-item mt-1" href="#">فیزیک</a></li>
+                        <li><a class="d-flex dropdown-item mt-1" href="#">ریاضیات</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="search-category w-100 d-flex">
+                  <form class="d-flex w-100">
+                    <input class="form-control" type="search" placeholder="جستجوی درس..." aria-label="Search">
+                    <button class="btn d-flex align-items-center" type="submit">
+                      <i class="fa-light fa-magnifying-glass text-white fs-5"></i>
+                    </button>
+                  </form>
+                </div>
+
+                <span
+                  class="search-mobile-btn-close d-flex align-items-center justify-content-center position-absolute">
+                  <i class="fa-light fa-circle-xmark px-2 fs-5"></i>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="notification-icon px-1 d-flex d-lg-none">
+              <i class="fa-thin fa-bell position-relative fs-2">
+                <span class="badge bg-danger position-absolute iran-sans">3</span>
+              </i>
+            </div>
+          </div>
+        </div>
+        <!-- پایان پروفایل کاربر آبی و سمت موبایل -->
+      </div>
+      <!-- عنوان داشبرد من - عنوان صفحه -->
+      <div class="row pt-5">
+        <div class="col-12 pb-2">
+          <h2 class="h3 g-dashboard font-16">سبد خرید</h2>
+        </div>
+        <div class="col-12">
+          <div class="d-flex gap-2">
+            <span class="border-title border-title-blue d-block"></span>
+            <span class="border-title border-title-gray d-block"></span>
+          </div>
+        </div>
+      </div>
+      <!-- پایان قسمت عنوان صفحه -->
+      <!-- show any content -->
+      <!-- Fateme Tekrar - start bill -->
+      <section class="container-xxl bill">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 guestionRight">
+            <div class="question-box">
+              <p class="question-text">من اینجا هستم تا تو را راهنمایی کنم
+                بنابراین اگر سوالی داری
+                برای من ارسال کن
+              </p>
+            </div>
+            <div class="question-box">
+              <p class="question-title font-16">
+                ... سوالی داشتم
+              </p>
+              <p class="question-text font-12">من اینجا هستم تا تو را راهنمایی کنم
+                بنابراین اگر سوالی داری
+                برای من ارسال کن
+              </p>
+              <button class="btn btn-sm c17d292 text-white mb-3">
+                ارسال
+              </button>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-12 p-0">
+            <div class="basket">
+              <section class="card border-0">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis eaque, dolores laudantium
+                  earum perferendis quasi impedit voluptatem esse id doloribus temporibus reprehenderit iure minima.
+                  Quaerat non unde minus alias.</p>
+              </section>
+              <section class="row justify-content-between">
+                <div class="col-md-6 col-sm-6 col-6">
+                  <div class="card border-0 justify-content-between d-flex flex-row text-muted font-12 discount">
+                    <div class="d-block p-2">کد تخفیف:</div>
+                    <span class="vl pt-1"></span>
+                    <input class="border-0 flex-shrink-1" />
+                    <button class="btn c17d292 text-white p-2">
+                      اعمال کد تخفیف
+                    </button>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-5">
+                  <div class="card border-0 justify-content-between d-flex flex-row p-2 text-muted font-12">
+                    <div>
+                      <span class="d-block p-1">قیمت کل</span>
+                      <span class="d-block p-1">مبلغ کسر شده</span>
+                    </div>
+                    <span class="vl"></span>
+                    <div class="text-start">
+                      <span class="d-block p-1">۲۴۵.۰۰۰ تومان</span>
+                      <span class="d-block p-1">۲۴۵.۰۰۰ تومان</span>
+                    </div>
+                  </div>
+                  <div class="card border-0 justify-content-between d-flex flex-row p-2 fs-6 fw-bold c2c2c2 font-12">
+                    <span class="p-1">مبلغ قابل پرداخت</span>
+                    <span class="p-1 text-start">۱۲۵.۰۰۰ تومان</span>
+                  </div>
+                </div>
+              </section>
+              <section class="row justify-content-between">
+                <div class="col-md-4 col-4">
+                  <button class="btn c2c2c2 basket-btn">ابطال و بازگشت</button>
+                </div>
+                <div class="col-md-4 col-4">
+                  <button class="btn text-white c17d292 basket-btn">پرداخت</button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fateme Tekrar - end bill -->
+      <!-- داشبورد من -->
+
+      <div class="shrink-mobile-show-btn position-fixed pointer d-none">
+        <i class="fa-regular fa-circle-user d-block shadow-lg rounded-circle"></i>
+      </div>
+  </div>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
