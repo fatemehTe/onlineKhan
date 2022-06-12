@@ -629,6 +629,12 @@ body.shrink .c-tooltip .c-tooltip-text {
     max-width: 40%;
 }
 
+.prod-border {
+    border-left: 2px solid #c2c2c2;
+    height: 100px;
+    align-items: center;
+}
+
 .wallet {
     color: #1976d2;
 }
