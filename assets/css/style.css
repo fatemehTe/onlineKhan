@@ -629,6 +629,10 @@ body.shrink .c-tooltip .c-tooltip-text {
     max-width: 40%;
 }
 
+.wallet {
+    color: #1976d2;
+}
+
 .discount {
     padding: 0 !important;
 }
@@ -640,16 +644,22 @@ body.shrink .c-tooltip .c-tooltip-text {
 }
 
 .discount input {
-    min-width: 20px;
+    min-width: 10px;
 }
 
 .vl {
     border-left: 2px solid #c2c2c2;
 }
 
+.verticalLine {
+    height: 30px;
+    border-left: 2px #c2c2c2 solid
+}
+
 .basket-btn {
     width: 100%;
     margin-top: 40px;
+    min-width: auto;
 }
 
 
@@ -846,7 +856,8 @@ body.shrink .c-tooltip .c-tooltip-text {
         left: -4px !important;
         top: -11px !important;
     }
-    .guestionRight{
+
+    .guestionRight {
         padding-left: 5px !important;
         padding-right: 5px !important;
     }

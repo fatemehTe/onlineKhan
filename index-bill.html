@@ -418,19 +418,25 @@
       <section class="container-xxl bill">
         <div class="row">
           <div class="col-md-3 col-sm-12 guestionRight">
-            <div class="question-box">
-              <p class="question-text">من اینجا هستم تا تو را راهنمایی کنم
-                بنابراین اگر سوالی داری
-                برای من ارسال کن
-              </p>
+            <div class="question-box d-flex flex-row justify-content-around p-2">
+              <div class="align-items-center justify-content-center text-end">
+                <span class="font-12 fw-bold d-block">مبلغ کیف پول شما
+                </span>
+                <span class="font-12">۰.۰۰۰ هزار تومان
+                </span>
+              </div>
+              <div class="align-items-center justify-content-center">
+                <img src="./assets/images/coin-icon.png" width="25" height="25" />
+                <span class="font-12 d-block wallet fw-bold">کیف پول</span>
+              </div>
             </div>
             <div class="question-box">
               <p class="question-title font-16">
                 ... سوالی داشتم
               </p>
               <p class="question-text font-12">من اینجا هستم تا تو را راهنمایی کنم
-                بنابراین اگر سوالی داری
-                برای من ارسال کن
+                بنابراین اگر هر سوالی داری
+                برایم ارسال کن
               </p>
               <button class="btn btn-sm c17d292 text-white mb-3">
                 ارسال
@@ -446,11 +452,12 @@
               </section>
               <section class="row justify-content-between">
                 <div class="col-md-6 col-sm-6 col-6">
-                  <div class="card border-0 justify-content-between d-flex flex-row text-muted font-12 discount">
-                    <div class="d-block p-2">کد تخفیف:</div>
-                    <span class="vl pt-1"></span>
+                  <div
+                    class="card border-0 justify-content-between d-flex flex-row text-muted font-12 discount align-items-center">
+                    <div class="d-block p-2 text-nowrap">کد تخفیف:</div>
+                    <div class="verticalLine"></div>
                     <input class="border-0 flex-shrink-1" />
-                    <button class="btn c17d292 text-white p-2">
+                    <button class="btn c17d292 text-white">
                       اعمال کد تخفیف
                     </button>
                   </div>
@@ -473,14 +480,14 @@
                   </div>
                 </div>
               </section>
-              <section class="row justify-content-between">
-                <div class="col-md-4 col-4">
-                  <button class="btn c2c2c2 basket-btn">ابطال و بازگشت</button>
+              <div class="row justify-content-between">
+                <div class="col-md-4 col-4 col-xs-6">
+                  <button class="btn c2c2c2 basket-btn text-nowrap">ابطال و بازگشت</button>
                 </div>
-                <div class="col-md-4 col-4">
+                <div class="col-md-4 col-4 col-xs-4">
                   <button class="btn text-white c17d292 basket-btn">پرداخت</button>
                 </div>
-              </section>
+              </div>
             </div>
           </div>
         </div>
