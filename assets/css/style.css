@@ -576,6 +576,7 @@ body.shrink .c-tooltip .c-tooltip-text {
 }
 
 /*Fateme Tekrar*/
+.btn:hover {}
 
 .bill {
     margin-top: 20px !important;
@@ -708,7 +709,7 @@ body.shrink .c-tooltip .c-tooltip-text {
     padding: 12px 40px;
     border-radius: 13px;
     border: none;
-    font-size: 24;
+    font-size: 24px;
 }
 
 .popUp-btn-div {
