@@ -17,6 +17,9 @@
 body {
     font-family: "IRANSans", Arial, Helvetica, sans-serif !important;
     width: calc(100% - 5.4rem);
+    /* fateme tekrar*/
+    position: relative;
+    /* fateme tekrar*/
 }
 
 ul {
@@ -576,6 +579,8 @@ body.shrink .c-tooltip .c-tooltip-text {
 }
 
 /*Fateme Tekrar - bill css*/
+
+
 .bill {
     margin-top: 20px !important;
 }
@@ -588,7 +593,6 @@ body.shrink .c-tooltip .c-tooltip-text {
     background-color: #f2f2f2;
     border-radius: 10px;
     padding: 10px;
-
 }
 
 .basket section {
@@ -668,6 +672,60 @@ body.shrink .c-tooltip .c-tooltip-text {
     min-width: auto;
 }
 
+.popUpPage {
+    position: fixed;
+    top: 100px;
+    left: 20%;
+    right: 20%;
+    height: auto;
+    background-color: #1976d2;
+    display: none;
+    z-index: 100000000;
+    color: white;
+}
+
+.popUp-input {
+    display: block;
+    border: none;
+    margin: auto;
+    padding: 15px 0px;
+    width: 80%;
+}
+
+.popUp-span {
+    display: block;
+    border: none;
+    padding: 10px;
+    text-align: right;
+    width: 80%;
+    margin: auto;
+    padding: 15px 0px 10px 0px;
+}
+
+.popUp-btn {
+    background-color: #17d292;
+    color: #ffffff;
+    padding: 12px 40px;
+    border-radius: 13px;
+    border: none;
+    font-size: 24;
+}
+
+.popUp-btn-div {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px !important;
+}
+
+.popUp-img {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 10%;
+    height: 10%;
+    max-width: 20px;
+    max-height: 20px;
+}
 
 .c2c2c2 {
     background-color: #c2c2c2;

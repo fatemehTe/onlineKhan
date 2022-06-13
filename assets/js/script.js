@@ -20,7 +20,16 @@ const kebab = document.querySelector('.kebab-menu'),
     cross = document.querySelector('.kebab-menu .cross'),
     dropdown = document.querySelector('.kebab-menu .dropdown');
 let screen_width = screen.width;
-
+/*
+Fateme Tekrar
+*/
+const question_send = document.getElementById("question-send");
+const main = document.getElementById("main");
+const popUpPage = document.getElementById("popUp-page");
+const popUpImg = document.getElementById("popUpImg");
+/*
+Fateme Tekrar
+*/
 document.addEventListener("click", (e) => {
     e.stopPropagation();
 
@@ -54,7 +63,7 @@ document.addEventListener("click", (e) => {
     dropdown.classList.remove('active');
 });
 
-kebab.addEventListener('click', (e) =>  {
+kebab.addEventListener('click', (e) => {
     e.stopPropagation();
 
     if (!middle.classList.contains('active') && !cross.classList.contains('active') && !dropdown.classList.contains('active')) {
@@ -210,3 +219,15 @@ if (sidebar_links.scrollHeight - (sidebar_links.scrollTop + sidebar_links.client
 } else {
     jump_down.style = 'display: none !important';
 }
+/*Fateme Tekrar */
+question_send.addEventListener("click", (e) => {
+    e.stopPropagation();
+    main.style = 'filter: blur(4px)';
+    popUpPage.style = 'display:inline';
+})
+popUpImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    main.style = 'filter: blur(0px)';
+    popUpPage.style = 'display:none';
+})
+/*Fateme Tekrar */
