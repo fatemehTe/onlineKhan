@@ -24,13 +24,13 @@ let screen_width = screen.width;
 Fateme Tekrar
 */
 const question_send = document.getElementById("question-send");
+const question_send1 = document.getElementById("question-send1");
+const question_send2 = document.getElementById("question-send2");
 const main = document.getElementById("main");
 const popUpPage = document.getElementById("popUp-page");
 const popUpImg = document.getElementById("popUpImg");
 const deleteFromBasket1 = document.getElementById("deleteFromBasket1")
 const deleteFromBasket2 = document.getElementById("deleteFromBasket2")
-const callMe = document.getElementById("callMe")
-const callMe2 = document.getElementById("callMe2")
 /*
 Fateme Tekrar
 */
@@ -229,6 +229,16 @@ question_send.addEventListener("click", (e) => {
     main.style = 'filter: blur(4px)';
     popUpPage.style = 'display:inline';
 })
+question_send1.addEventListener("click", (e) => {
+    e.stopPropagation();
+    main.style = 'filter: blur(4px)';
+    popUpPage.style = 'display:inline';
+})
+question_send2.addEventListener("click", (e) => {
+    e.stopPropagation();
+    main.style = 'filter: blur(4px)';
+    popUpPage.style = 'display:inline';
+})
 popUpImg.addEventListener("click", (e) => {
     e.stopPropagation();
     main.style = 'filter: blur(0px)';
@@ -242,15 +252,5 @@ deleteFromBasket2.addEventListener("click", (e) => {
     e.stopPropagation();
     book2.style = 'display: none';
 })
-callMe.addEventListener("click", (e) => {
-    e.stopPropagation();
-    console.log('skdjkSANDn')
-    main.style = 'filter: blur(4px)';
-    popUpPage.style = 'display:inline';
-})
-callMe2.addEventListener("click", (e) => {
-    e.stopPropagation();
-    main.style = 'filter: blur(4px)';
-    popUpPage.style = 'display:inline';
-})
+
 /*Fateme Tekrar */
