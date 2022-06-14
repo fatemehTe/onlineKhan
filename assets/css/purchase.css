@@ -1,0 +1,57 @@
+.purchaseSuccess {
+    border: 1px solid #17d292
+}
+
+.purchaseSuccess .title {
+    color: #17d292;
+}
+
+.purchaseSuccess .text {
+    line-height: 22px;
+}
+.purchaseFail .text {
+    line-height: 22px;
+}
+.purchaseAlert .text {
+    line-height: 22px;
+}
+
+.fa-thumbs-up {
+    color: #17d292;
+    background-color: #D0F6E9;
+    border: 1px solid #17d292;
+    top: -15px;
+    left: 20px;
+}
+
+.purchaseFail {
+    border: 1px solid #D8295F
+}
+
+.purchaseFail .title {
+    color: #D8295F;
+}
+
+.fa-exclamation-triangle {
+    color: #D8295F;
+    background-color: #F8DAE2;
+    border: 1px solid #D8295F;
+    top: -15px;
+    left: 20px;
+}
+
+.purchaseAlert {
+    border: 1px solid #EE7E26
+}
+
+.purchaseAlert .title {
+    color: #EE7E26;
+}
+
+.fa-bell {
+    color: #EE7E26;
+    background-color: #F6D6BF;
+    border: 1px solid #EE7E26;
+    top: -15px;
+    left: 20px;
+}

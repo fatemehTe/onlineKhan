@@ -1,6 +1,7 @@
 /* Fateme Tekrar */
 .btn {
     font-size: 14px !important;
+    font-weight: bold;
 }
 
 /* .btn:hover {} */
@@ -243,6 +244,25 @@
     background-color: #1976d2;
 }
 
+.D0F6E9 {
+    background-color: #D0F6E9;
+}
+
+.F8DAE2 {
+    background-color: #F8DAE2;
+}
+
+.D8295F {
+    background-color: #D8295F;
+}
+
+.F6D6BF {
+    background-color: #F6D6BF;
+}
+
+.EE7E26 {
+    background-color: #EE7E26;
+}
 
 
 @media only screen and (max-width: 768px) {
