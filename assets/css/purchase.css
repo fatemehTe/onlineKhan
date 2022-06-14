@@ -17,9 +17,9 @@
 }
 
 .fa-thumbs-up {
-    color: #17d292;
-    background-color: #D0F6E9;
-    border: 1px solid #17d292;
+    color: #0abf81;
+    background-color: #cff6e9;
+    border: 1px solid #0abf81;
     top: -15px;
     left: 20px;
 }
@@ -32,26 +32,26 @@
     color: #D8295F;
 }
 
-.fa-exclamation-triangle {
+.fa-light-emergency-on {
     color: #D8295F;
-    background-color: #F8DAE2;
+    background-color: #f8dae2;
     border: 1px solid #D8295F;
     top: -15px;
     left: 20px;
 }
 
 .purchaseAlert {
-    border: 1px solid #EE7E26
+    border: 1px solid #ff6c00
 }
 
 .purchaseAlert .title {
-    color: #EE7E26;
+    color: #f6d6bf;
 }
 
-.fa-bell {
-    color: #EE7E26;
-    background-color: #F6D6BF;
-    border: 1px solid #EE7E26;
+.fa-diamond-exclamation {
+    color: #ff6c00;
+    background-color: #f6d6bf;
+    border: 1px solid #ff6c00;
     top: -15px;
     left: 20px;
 }
