@@ -100,6 +100,17 @@
     top: -8px;
     left: -8px;
 }
+
+.modal-header {
+    height: 45px !important;
+}
+
+.close-btn {
+    left: 15px;
+    top: 15px;
+    margin: auto;
+}
+
 .wallet {
     color: #1976d2;
 }

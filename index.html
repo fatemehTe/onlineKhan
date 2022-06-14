@@ -472,7 +472,7 @@
                     <div class="col-md-5 col-5 fw-bold font-14">محصول</div>
                     <div class="col-md-4 col-4 fw-bold font-14">قیمت(تومان)</div>
                   </div>
-                  <div class="row text-center mb-4 align-items-center mb-3">
+                  <div class="row text-center mb-4 align-items-center mb-3" id="book1">
                     <div class="col-md-3 col-3 prod-border">
                       <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
@@ -503,44 +503,92 @@
                     <!--MODAL-->
                     <div class="col-md-4 col-4 d-flex flex-row">
                       <div class="flex-fill font-12">۲۴۵.۰۰۰</div>
-                      <div>
+                      <div data-bs-toggle="modal" data-bs-target="#exampleModalDelete">
+                        <img src="./assets/images/delete.png" />
+                      </div>
+                      <!--Modal delete-->
+                      <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header border-0 bg-danger position-relative">
+                              <i class="fa-light fa-times text-white fs-5 bg-danger close-btn position-absolute"
+                                data-bs-dismiss="modal"></i>
+                            </div>
+                            <div class="modal-body">
+                              آیا از حذف کتاب درسی مطمین هستید؟
+                            </div>
+                            <div class="modal-footer border-0 d-flex flex-row justify-content-between">
+                              <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                                id="deleteFromBasket1">حذف از سبد خرید
+                                <i class="fa-light fa-trash text-white fs-5"></i>
+                              </button>
+                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Modal delete-->
+                    </div>
+                  </div>
+                  <div class="row text-center mb-4 align-items-center mb-3" id="book2">
+                    <div class="col-md-3 col-3 prod-border">
+                      <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
+                        <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
+                      </div>
+                    </div>
+                    <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
+                      <div class="align-items-center font-12">
+                        درس ادبیات ۱ سال اول دبیرستان
+                      </div>
+                    </div>
+                    <!--MODAL-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-body d-flex flex-row justify-content-center">
+                          <img src="./assets/images/farsi.jpeg" width="auto" height="400"
+                            class="p-1 bg-white rounded-1" />
+                          <div class="position-relative">
+                            <img src="./assets/images/delete.png" width="auto" height="30"
+                              class="p-1 bg-white rounded-5 position-absolute modal-close" />
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--MODAL-->
+                    <div class="col-md-4 col-4 d-flex flex-row">
+                      <div class="flex-fill font-12">۲۴۵.۰۰۰</div>
+                      <div data-bs-toggle="modal" data-bs-target="#exampleModalDelete2">
                         <img src="./assets/images/delete.png" />
                       </div>
                     </div>
-                  </div>
-                  <div class="row text-center mb-4 align-items-center mb-3">
-                    <div class="col-md-3 col-3 prod-border">
-                      <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
-                        <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
-                      </div>
-                    </div>
-                    <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
-                      <div class="align-items-center font-12">
-                        درس ادبیات ۱ سال اول دبیرستان
-                      </div>
-                    </div>
-                    <!--MODAL-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <!--Modal delete-->
+                    <div class="modal fade" id="exampleModalDelete2" tabindex="-1" aria-labelledby="exampleModalLabel"
                       aria-hidden="true">
                       <div class="modal-dialog">
-                        <div class="modal-body d-flex flex-row justify-content-center">
-                          <img src="./assets/images/farsi.jpeg" width="auto" height="400"
-                            class="p-1 bg-white rounded-1" />
-                          <div class="position-relative">
-                            <img src="./assets/images/delete.png" width="auto" height="30"
-                              class="p-1 bg-white rounded-5 position-absolute modal-close" />
+                        <div class="modal-content">
+                          <div class="modal-header border-0 bg-danger position-relative">
+                            <i class="fa-light fa-times text-white fs-5 bg-danger close-btn position-absolute"
+                              data-bs-dismiss="modal"></i>
                           </div>
-                          </a>
+                          <div class="modal-body">
+                            آیا از حذف کتاب درسی مطمین هستید؟
+                          </div>
+                          <div class="modal-footer border-0 d-flex flex-row justify-content-between">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"
+                              id="deleteFromBasket2">حذف از سبد خرید
+                              <i class="fa-light fa-trash text-white fs-5"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <!--MODAL-->
-                    <div class="col-md-4 col-4 d-flex flex-row">
-                      <div class="flex-fill font-12">۲۴۵.۰۰۰</div>
-                      <div><img src="./assets/images/delete.png" /></div>
-                    </div>
+                    <!--Modal delete-->
                   </div>
                 </section>
                 <section class="row justify-content-between">

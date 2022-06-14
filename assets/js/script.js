@@ -27,6 +27,8 @@ const question_send = document.getElementById("question-send");
 const main = document.getElementById("main");
 const popUpPage = document.getElementById("popUp-page");
 const popUpImg = document.getElementById("popUpImg");
+const deleteFromBasket1 = document.getElementById("deleteFromBasket1")
+const deleteFromBasket2 = document.getElementById("deleteFromBasket2")
 
 /*
 Fateme Tekrar
@@ -230,6 +232,14 @@ popUpImg.addEventListener("click", (e) => {
     e.stopPropagation();
     main.style = 'filter: blur(0px)';
     popUpPage.style = 'display:none';
+})
+deleteFromBasket1.addEventListener("click", (e) => {
+    e.stopPropagation();
+    book1.style = 'display: none';
+})
+deleteFromBasket2.addEventListener("click", (e) => {
+    e.stopPropagation();
+    book2.style = 'display: none';
 })
 
 /*Fateme Tekrar */
