@@ -27,6 +27,7 @@ const question_send = document.getElementById("question-send");
 const main = document.getElementById("main");
 const popUpPage = document.getElementById("popUp-page");
 const popUpImg = document.getElementById("popUpImg");
+
 /*
 Fateme Tekrar
 */
@@ -230,4 +231,5 @@ popUpImg.addEventListener("click", (e) => {
     main.style = 'filter: blur(0px)';
     popUpPage.style = 'display:none';
 })
+
 /*Fateme Tekrar */

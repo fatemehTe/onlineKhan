@@ -32,6 +32,7 @@
   <!-- پیوند به فایل های استایل شیت و اسکریپت -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link href="assets/css/shopping-bag.css" rel="stylesheet">
   <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
   <!--*****************************************************-->
   <!--*****************************************************-->
@@ -62,7 +63,7 @@
       <span class="shrink-btn border-bottom border-2">
         <span class="link hide fs-5 ">پنل دانش آموزی</span>
         <div class="icon">
-          <img src="assets/img/collapse-menu-icon.png">
+          <img src="./assets/images/ecollapse-menu-icon.png">
         </div>
       </span>
     </div>
@@ -200,7 +201,7 @@
 
       <span class="shrink-btn shrink-mobile-hide-btn d-none">
         <div class="icon">
-          <img src="assets/img/ecollapse-menu-icon.png">
+          <img src="./assets/images/ecollapse-menu-icon.png">
         </div>
       </span>
     </div>
@@ -281,7 +282,7 @@
         <div class="row">
           <div class="col-6 col-md-3 col-lg-3 col-xl-2">
             <a href="#" class="d-block container-logo">
-              <img src="assets/img/logo.png">
+              <img src="./assets/images/logo (1).png">
             </a>
           </div>
           <!-- لگوی سایت -->
@@ -473,27 +474,69 @@
                   </div>
                   <div class="row text-center mb-4 align-items-center mb-3">
                     <div class="col-md-3 col-3 prod-border">
-                      <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
+                      <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
+                        <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
+                      </div>
                     </div>
                     <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
                       <div class="align-items-center font-12">
                         درس ادبیات ۱ سال اول دبیرستان
                       </div>
                     </div>
+                    <!--MODAL-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-body d-flex flex-row justify-content-center">
+                          <img src="./assets/images/farsi.jpeg" width="auto" height="400"
+                            class="p-1 bg-white rounded-1" />
+                          <div class="position-relative">
+                            <img src="./assets/images/delete.png" width="auto" height="30"
+                              class="p-1 bg-white rounded-5 position-absolute modal-close" />
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--MODAL-->
                     <div class="col-md-4 col-4 d-flex flex-row">
                       <div class="flex-fill font-12">۲۴۵.۰۰۰</div>
-                      <div><img src="./assets/images/delete.png" /></div>
+                      <div>
+                        <img src="./assets/images/delete.png" />
+                      </div>
                     </div>
                   </div>
                   <div class="row text-center mb-4 align-items-center mb-3">
                     <div class="col-md-3 col-3 prod-border">
-                      <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
+                      <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
+                        <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
+                      </div>
                     </div>
                     <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
                       <div class="align-items-center font-12">
                         درس ادبیات ۱ سال اول دبیرستان
                       </div>
                     </div>
+                    <!--MODAL-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-body d-flex flex-row justify-content-center">
+                          <img src="./assets/images/farsi.jpeg" width="auto" height="400"
+                            class="p-1 bg-white rounded-1" />
+                          <div class="position-relative">
+                            <img src="./assets/images/delete.png" width="auto" height="30"
+                              class="p-1 bg-white rounded-5 position-absolute modal-close" />
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--MODAL-->
                     <div class="col-md-4 col-4 d-flex flex-row">
                       <div class="flex-fill font-12">۲۴۵.۰۰۰</div>
                       <div><img src="./assets/images/delete.png" /></div>
