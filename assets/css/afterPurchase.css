@@ -1,41 +1,41 @@
 .purchaseSuccess {
-    border: 1px solid #17d292
+    border: 1px solid #0abf81
 }
 
 .purchaseSuccess .title {
-    color: #17d292;
+    color: #0abf81;
 }
 
 .purchaseSuccess .text {
     line-height: 22px;
 }
+
 .purchaseFail .text {
     line-height: 22px;
 }
+
 .purchaseAlert .text {
     line-height: 22px;
 }
 
 .fa-thumbs-up {
     color: #0abf81;
-    background-color: #cff6e9;
     border: 1px solid #0abf81;
     top: -15px;
     left: 20px;
 }
 
 .purchaseFail {
-    border: 1px solid #D8295F
+    border: 1px solid #ff0048
 }
 
 .purchaseFail .title {
-    color: #D8295F;
+    color: #ff0048;
 }
 
 .fa-light-emergency-on {
-    color: #D8295F;
-    background-color: #f8dae2;
-    border: 1px solid #D8295F;
+    color: #ff0048;
+    border: 1px solid #ff0048;
     top: -15px;
     left: 20px;
 }
@@ -45,12 +45,11 @@
 }
 
 .purchaseAlert .title {
-    color: #f6d6bf;
+    color: #ff6c00;
 }
 
 .fa-diamond-exclamation {
     color: #ff6c00;
-    background-color: #f6d6bf;
     border: 1px solid #ff6c00;
     top: -15px;
     left: 20px;
