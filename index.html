@@ -41,21 +41,23 @@
 
 <body class="shrink">
 
-  <!--fateme tekrar-->
+  <!--fateme tekrar-popupQuestion-start-->
   <div class="popUpPage" id="popUp-page">
     <img src="./assets/images/delete.png" class="popUp-img" id="popUpImg">
-    <span class="popUp-span" style="position: relative;">:نام
-    </span>
-    <input type="text" class="popUp-input form-control" />
-    <span class="popUp-span">:پست الکترونیک</span>
-    <input type="text" class="popUp-input form-control" />
-    <span class="popUp-span">:پیام</span>
-    <textarea type="text" class="popUp-input form-control"></textarea>
-    <div class="popUp-btn-div">
-      <button class=" btn d-flex align-items-center popUp-btn">ارسال</button>
-    </div>
+    <form>
+      <span class="popUp-span" style="position: relative;">:نام
+      </span>
+      <input type="text" class="popUp-input form-control" />
+      <span class="popUp-span">:پست الکترونیک</span>
+      <input type="text" class="popUp-input form-control" />
+      <span class="popUp-span">:پیام</span>
+      <textarea type="text" class="popUp-input form-control"></textarea>
+      <div class="popUp-btn-div">
+        <button class=" btn d-flex align-items-center popUp-btn">ارسال</button>
+      </div>
+    </form>
   </div>
-  <!--fateme tekrar-->
+  <!--fateme tekrar-popupQuestion-end-->
   <!-- شروع منوی ثابت سمت راست -->
 
   <nav class="c-nav overflow-hidden">
@@ -207,10 +209,9 @@
     </div>
   </nav>
   <!-- پایان منوی ثابت سمت راست -->
-  <!--fateme tekrar-->
-  <!--main starts (for blur)-->
+  <!--fateme tekrar-only surround the div with main-->
   <div id="main">
-    <!--fateme tekrar-->
+    <!--fateme tekrar-maindiv(for blur)-->
     <!-- منوی بالا هدر اول -->
     <nav class="container-nav-top px-3 px-lg-4 border-bottom border-2">
       <div class="nav-top d-flex flex-wrap align-items-center h-100">
@@ -435,11 +436,11 @@
         </div>
         <!-- پایان قسمت عنوان صفحه -->
         <!-- show any content -->
-        <!-- Fateme Tekrar - start bill -->
+        <!-- Fateme Tekrar -bill-start -->
         <section class="container-xxl bill">
           <div class="row">
-            <div class="col-md-3 col-sm-12 questionRight">
-              <div class="question-box d-flex flex-row justify-content-around p-2">
+            <div class="col-md-3 col-sm-12 wallet-question">
+              <section class=" d-flex flex-row justify-content-around p-2">
                 <div class="align-items-center justify-content-center text-end">
                   <span class="font-12 fw-bold d-block">مبلغ کیف پول شما
                   </span>
@@ -450,8 +451,8 @@
                   <img src="./assets/images/coin-icon.png" width="25" height="25" />
                   <span class="font-12 d-block wallet fw-bold">کیف پول</span>
                 </div>
-              </div>
-              <div class="question-box">
+              </section>
+              <section>
                 <p class="question-title font-16">
                   ... سوالی داشتم
                 </p>
@@ -459,10 +460,10 @@
                   بنابراین اگر هر سوالی داری
                   برایم ارسال کن
                 </p>
-                <button class="btn btn-sm c17d292 text-white mb-3" id="question-send">
+                <button class="btn btn-sm bg-17d292 text-white mb-3" type="submit" id="question-send">
                   ارسال
                 </button>
-              </div>
+              </section>
             </div>
             <div class="col-md-9 col-sm-12 p-0">
               <div class="basket">
@@ -473,14 +474,14 @@
                     <div class="col-md-4 col-4 fw-bold font-14">قیمت(تومان)</div>
                   </div>
                   <div class="row text-center mb-4 align-items-center mb-3" id="book1">
-                    <div class="col-md-3 col-3 prod-border">
+                    <div class="col-md-3 col-3 prodBorder">
                       <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
                         <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
                       </div>
                     </div>
-                    <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
+                    <div class="col-md-5 col-5 text-end pe-5 prodBorder d-flex">
                       <div class="align-items-center font-12">
                         درس ادبیات ۱ سال اول دبیرستان
                       </div>
@@ -532,14 +533,14 @@
                     </div>
                   </div>
                   <div class="row text-center mb-4 align-items-center mb-3" id="book2">
-                    <div class="col-md-3 col-3 prod-border">
+                    <div class="col-md-3 col-3 prodBorder">
                       <div class="prodImg mx-auto position-relative" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <img src="./assets/images/farsi.jpeg" width="auto" height="100" />
                         <img src="./assets/images/search.png" class="prodImg-search" width="30" height="30"></i>
                       </div>
                     </div>
-                    <div class="col-md-5 col-5 text-end pe-5 prod-border d-flex">
+                    <div class="col-md-5 col-5 text-end pe-5 prodBorder d-flex">
                       <div class="align-items-center font-12">
                         درس ادبیات ۱ سال اول دبیرستان
                       </div>
@@ -598,7 +599,7 @@
                       <div class="d-block p-2 text-nowrap">کد تخفیف:</div>
                       <div class="verticalLine"></div>
                       <input class="form-control border-0 flex-shrink-1" />
-                      <button class="btn c17d292 text-white">
+                      <button class="btn bg-17d292 text-white">
                         اعمال کد تخفیف
                       </button>
                     </div>
@@ -615,7 +616,8 @@
                         <span class="d-block p-1">۲۴۵.۰۰۰ تومان</span>
                       </div>
                     </div>
-                    <div class="card border-0 justify-content-between d-flex flex-row p-2 fs-6 fw-bold c2c2c2 font-12">
+                    <div
+                      class="card border-0 justify-content-between d-flex flex-row p-2 fs-6 fw-bold bg-c2c2c2 font-12">
                       <span class="p-1">مبلغ قابل پرداخت</span>
                       <span class="p-1 text-start">۱۲۵.۰۰۰ تومان</span>
                     </div>
@@ -623,12 +625,12 @@
                 </section>
                 <div class="row justify-content-between">
                   <div class="col-md-4 col-4 col-xs-6">
-                    <button class="btn c2c2c2 basket-btn align-items-center text-nowrap" type="submit">ابطال و
+                    <button class="btn bg-c2c2c2 basket-btn align-items-center text-nowrap" type="submit">ابطال و
                       بازگشت</button>
                     </button>
                   </div>
                   <div class="col-md-4 col-4 col-xs-4">
-                    <button class="btn text-white c17d292 align-items-center basket-btn" type="submit">پرداخت</button>
+                    <button class="btn text-white bg-17d292 align-items-center basket-btn" type="submit">پرداخت</button>
                   </div>
                 </div>
               </div>
@@ -645,10 +647,12 @@
     </div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/shopping-bag.js"></script>
     <script src="assets/js/script.js"></script>
-    <!--fateme tekrar  end of main(for blur)-->
+    <!--fateme tekrar-only surround the div with main-->
   </div>
-  <!--fateme tekrar-->
+  <!--fateme tekrar-maindiv(for blur)-->
 </body>
 
 </html>

@@ -1,7 +1,8 @@
 /*fateme tekrar*/
-const question_send = document.getElementById("question-send");
 const main = document.getElementById("main");
 const popUpPage = document.getElementById("popUp-page");
+const question_send1 = document.getElementById("question-send1");
+const question_send2 = document.getElementById("question-send2");
 const popUpImg = document.getElementById("popUpImg");
 
 popUpImg.addEventListener("click", (e) => {
@@ -9,7 +10,12 @@ popUpImg.addEventListener("click", (e) => {
     main.style = 'filter: blur(0px)';
     popUpPage.style = 'display:none';
 })
-question_send.addEventListener("click", (e) => {
+question_send1.addEventListener("click", (e) => {
+    e.stopPropagation();
+    main.style = 'filter: blur(4px)';
+    popUpPage.style = 'display:inline';
+})
+question_send2.addEventListener("click", (e) => {
     e.stopPropagation();
     main.style = 'filter: blur(4px)';
     popUpPage.style = 'display:inline';

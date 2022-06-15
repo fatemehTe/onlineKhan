@@ -32,8 +32,7 @@
   <!-- پیوند به فایل های استایل شیت و اسکریپت -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/dashboard.css" rel="stylesheet">
-  <link href="assets/css/shopping-bag.css" rel="stylesheet">
-  <link href="assets/css/purchase.css" rel="stylesheet">
+  <link href="assets/css/afterPurchase.css" rel="stylesheet">
   <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
   <!--*****************************************************-->
   <!--*****************************************************-->
@@ -439,8 +438,8 @@
         <!-- Fateme Tekrar - start bill -->
         <section class="container-xxl bill">
           <div class="row">
-            <div class="col-md-3 col-sm-12 questionRight">
-              <div class="question-box d-flex flex-row justify-content-around p-2">
+            <div class="col-md-3 col-sm-12 wallet-question">
+              <section class="d-flex flex-row justify-content-around p-2">
                 <div class="align-items-center justify-content-center text-end">
                   <span class="font-12 fw-bold d-block">مبلغ کیف پول شما
                   </span>
@@ -451,8 +450,8 @@
                   <img src="./assets/images/coin-icon.png" width="25" height="25" />
                   <span class="font-12 d-block wallet fw-bold">کیف پول</span>
                 </div>
-              </div>
-              <div class="question-box">
+              </section>
+              <section>
                 <p class="question-title font-16">
                   ... سوالی داشتم
                 </p>
@@ -460,15 +459,15 @@
                   بنابراین اگر هر سوالی داری
                   برایم ارسال کن
                 </p>
-                <button class="btn btn-sm c17d292 text-white mb-3" id="question-send">
+                <button class="btn btn-sm bg-17d292 text-white mb-3" id="question-send">
                   ارسال
                 </button>
-              </div>
+              </section>
             </div>
             <div class="col-md-9 col-sm-12 p-0">
               <div class="basket">
 
-                <div class="purchaseSuccess mx-2 my-4 px-3 py-2 rounded-2 D0F6E9 position-relative">
+                <div class="purchaseSuccess mx-2 my-4 px-3 py-2 rounded-2 bg-D0F6E9 position-relative">
                   <h5 class="mb-4 title fw-bold pt-2">انجام شد !</h5>
                   <p class="font-12 pb-4 text">کاربر گرامی <br>خرید شما با موفقیت انجام شد.</p>
                   <div class="d-flex flex-row justify-content-between">
@@ -480,7 +479,7 @@
                   <i class="fa fa-thumbs-up rounded-5 p-2 position-absolute" aria-hidden="true"></i>
                 </div>
 
-                <div class="purchaseFail mx-2 my-4 px-3 py-2 rounded-2 F8DAE2 position-relative">
+                <div class="purchaseFail mx-2 my-4 px-3 py-2 rounded-2 bg-F8DAE2 position-relative">
                   <h5 class="mb-4 title fw-bold pt-2">خطایی رخ داده است !</h5>
                   <p class="font-12 pb-4 text">کاربر گرامی <br>متاسفانه روند خرید شما با اشکال مواجه شده است.</p>
                   <div class="d-flex flex-row justify-content-between">
@@ -494,7 +493,7 @@
                   </div>
                   <i class="fa fa-solid fa-light-emergency-on rounded-5 p-2 position-absolute" aria-hidden="true"></i>
                 </div>
-                <div class="purchaseAlert mx-2 my-4 px-3 py-2 rounded-2 F6D6BF position-relative">
+                <div class="purchaseAlert mx-2 my-4 px-3 py-2 rounded-2 bg-F6D6BF position-relative">
                   <h5 class="mb-4 title fw-bold pt-2">هشدار !</h5>
                   <p class="font-12 pb-4 text">کاربر گرامی <br>ممکن است روند خرید شما با اختلال مواجه شده باشد.</p>
                   <div class="d-flex flex-row justify-content-between">
@@ -528,6 +527,8 @@
     </div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/afterPurchase.js"></script>
     <script src="assets/js/script.js"></script>
     <!--fateme tekrar  end of main(for blur)-->
   </div>

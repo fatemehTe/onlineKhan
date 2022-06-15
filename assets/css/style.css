@@ -571,6 +571,74 @@ body.shrink .c-tooltip .c-tooltip-text {
 }
 
 /* end When the menu shrinks */
+/*fateme tekrar*/
+/*basic colors start*/
+.bg-c2c2c2 {
+    background-color: #c2c2c2;
+}
+
+.bg-c4c4c4 {
+    background-color: #c4c4c4;
+}
+
+.bg-17d292 {
+    background-color: #17d292;
+}
+
+.bg-ff0048 {
+    background-color: #ff0048;
+}
+
+.bg-ffffff {
+    background-color: #ffffff;
+}
+
+.bg-000000 {
+    background-color: #000000;
+}
+
+.bg-3d3d3d {
+    background-color: #3d3d3d;
+}
+
+.bg-969696 {
+    background-color: #969696;
+}
+
+.bg-d9d9d9 {
+    background-color: #d9d9d9;
+}
+
+.bg-f2f2f2 {
+    background-color: #f2f2f2;
+}
+
+.bg-1976d2 {
+    background-color: #1976d2;
+}
+
+.bg-D0F6E9 {
+    background-color: #D0F6E9;
+}
+
+.bg-F8DAE2 {
+    background-color: #f8dae2;
+}
+
+.bg-D8295F {
+    background-color: #D8295F;
+}
+
+.bg-F6D6BF {
+    background-color: #f6d6bf;
+}
+
+.bg-EE7E26 {
+    background-color: #ff6c00;
+}
+
+/*basic colors start*/
+/*fateme tekrar*/
 
 @media only screen and (max-width: 992px) {
     .container-search-category .course-category .dropstart .dropdown-menu {

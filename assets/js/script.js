@@ -20,20 +20,7 @@ const kebab = document.querySelector('.kebab-menu'),
     cross = document.querySelector('.kebab-menu .cross'),
     dropdown = document.querySelector('.kebab-menu .dropdown');
 let screen_width = screen.width;
-/*
-Fateme Tekrar
-*/
-const question_send = document.getElementById("question-send");
-const question_send1 = document.getElementById("question-send1");
-const question_send2 = document.getElementById("question-send2");
-const main = document.getElementById("main");
-const popUpPage = document.getElementById("popUp-page");
-const popUpImg = document.getElementById("popUpImg");
-const deleteFromBasket1 = document.getElementById("deleteFromBasket1")
-const deleteFromBasket2 = document.getElementById("deleteFromBasket2")
-/*
-Fateme Tekrar
-*/
+
 document.addEventListener("click", (e) => {
     e.stopPropagation();
 
@@ -223,34 +210,3 @@ if (sidebar_links.scrollHeight - (sidebar_links.scrollTop + sidebar_links.client
 } else {
     jump_down.style = 'display: none !important';
 }
-/*Fateme Tekrar */
-question_send.addEventListener("click", (e) => {
-    e.stopPropagation();
-    main.style = 'filter: blur(4px)';
-    popUpPage.style = 'display:inline';
-})
-question_send1.addEventListener("click", (e) => {
-    e.stopPropagation();
-    main.style = 'filter: blur(4px)';
-    popUpPage.style = 'display:inline';
-})
-question_send2.addEventListener("click", (e) => {
-    e.stopPropagation();
-    main.style = 'filter: blur(4px)';
-    popUpPage.style = 'display:inline';
-})
-popUpImg.addEventListener("click", (e) => {
-    e.stopPropagation();
-    main.style = 'filter: blur(0px)';
-    popUpPage.style = 'display:none';
-})
-deleteFromBasket1.addEventListener("click", (e) => {
-    e.stopPropagation();
-    book1.style = 'display: none';
-})
-deleteFromBasket2.addEventListener("click", (e) => {
-    e.stopPropagation();
-    book2.style = 'display: none';
-})
-
-/*Fateme Tekrar */
