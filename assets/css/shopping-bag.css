@@ -118,14 +118,16 @@
 
 .discount {
     padding: 0 !important;
+    height: 40px !important;
 }
 
 .discount .btn {
     border-radius: 5px 0 0 5px;
-    padding: 6px 0px !important;
-    width: 33%;
+    padding: 0px 0px !important;
+    width: 60%;
+    height: 40px;
+    line-height: 13px;
 }
-
 .discount input {
     min-width: 10px;
 }
