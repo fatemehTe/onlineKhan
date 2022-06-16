@@ -581,6 +581,18 @@ body.shrink .c-tooltip .c-tooltip-text {
 /* end When the menu shrinks */
 /*fateme tekrar*/
 /*customized buttons start*/
+.btn-solid {
+    background-color: #ffffff;
+    border: 0px;
+}
+
+.btn-solid:hover,
+.btn-solid:active,
+.btn-solid:focus {
+    background-color: #ffffff;
+    border: 0px;
+}
+
 .btn-primary {
     background-color: #1976d2;
     border: 0px;
