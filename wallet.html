@@ -468,36 +468,36 @@
             </div>
             <div class="col-md-9 col-sm-12 p-0">
               <div class="basket bg-f2f2f2">
-                <section class="row">
-                  <div class="col-md-6 col-sm-6 col-6">
-                    <div
-                      class="card border-0 justify-content-between d-flex flex-row text-muted font-12 discount align-items-center">
+                <section class="row wallet">
+                  <div class="col-md-8 col-sm-8 col-8">
+                    <div class="card border-0 justify-content-between d-flex flex-row text-muted align-items-center">
                       <div class="d-block p-2 text-nowrap fw-bold">مبلغ فعلی کیف پول شما:</div>
                       <div class="verticalLine"></div>
-                      <input class="form-control border-0 flex-shrink-1" />
+                      <input class="form-control border-0 flex-shrink-1 text-center" placeholder="۱۵۰.۰۰۰ تومان" />
                       <button class="btn btn-success text-white">
                         افزایش موجودی
                       </button>
                     </div>
                   </div>
                 </section>
-                <section>
-                  <div class="d-flex flex-row justify-content-between">
-                    <div>تاریخچه کیف پول من</div>
-                    <div class="dropdown">
-                      <button class="btn btn-solid" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="fa fa-sort-amount-asc d-inline" aria-hidden="true"></i>
-                        <span class="d-inline fs-8">مرتب سازی</span>
-                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">انتشار جدید به قدیم</a></li>
-                        <li><a class="dropdown-item" href="#">انتشار قدیم یه جدید</a></li>
-                      </ul>
-                    </div>
+                <div class="d-flex flex-row justify-content-between mb-1 mt-4">
+                  <h5>تاریخچه کیف پول من</h5>
+                  <div class="dropdown">
+                    <button class="btn btn-solid rounded-3 p-2" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <div class="d-flex flex-row align-items-center my-auto">
+                        <i class="fa fa-sort-amount-desc ms-2" aria-hidden="true"></i>
+                        <p class="c-1976d2 my-auto">مرتب سازی</p>
+                        <i class="fa fa-chevron-down ms-2 me-4" aria-hidden="true" id="chevron"></i>
+                        <!-- <i class="fa fa-chevron-up" aria-hidden="true"></i> -->
+                      </div>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">انتشار جدید به قدیم</a></li>
+                      <li><a class="dropdown-item" href="#">انتشار قدیم یه جدید</a></li>
+                    </ul>
                   </div>
-                </section>
+                </div>
                 <section class="card border-0 pt-4 ps-4 pe-4">
                   <table class="table table-bordered table-hover">
                     <thead>
@@ -510,24 +510,24 @@
                     </thead>
                     <tbody>
                       <tr class="text-center">
-                        <th scope="row">۱</th>
-                        <td>۱۴۰۱/۰۲/۲۳</td>
-                        <td>۲۳۰.۰۰۰ تومان</td>
-                        <td>
+                        <th scope="row" class="p-4">۱</th>
+                        <td class="p-4">۱۴۰۱/۰۲/۲۳</td>
+                        <td class="p-4">۲۳۰.۰۰۰ تومان</td>
+                        <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
-                            <p>شارژ شد</p>
+                            <div class="c-1976d2">شارژ شد</div>
                             <i class="fa-light fa-trash fs-5 ps-4" data-bs-toggle="modal"
                               data-bs-target="#exampleModalDelete2"></i>
                           </div>
                         </td>
                       </tr>
                       <tr class="text-center tr2">
-                        <th scope="row">۲</th>
-                        <td>۱۴۰۱/۰۲/۲۳</td>
-                        <td>۲۳۰.۰۰۰ تومان</td>
-                        <td>
+                        <th scope="row" class="p-4">۲</th>
+                        <td class="p-4">۱۴۰۱/۰۲/۲۳</td>
+                        <td class="p-4">۲۳۰.۰۰۰ تومان</td>
+                        <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
-                            <p class="c-ff0048">کسر شد</p>
+                            <div class="c-ff0048">کسر شد</div>
                             <i class="fa-light fa-trash fs-5 ps-4" data-bs-toggle="modal"
                               data-bs-target="#exampleModalDelete2"></i>
                           </div>
@@ -586,6 +586,7 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/shopping-bag.js"></script>
+    <script src="assets/js/wallet.js"></script>
     <script src="assets/js/script.js"></script>
     <!--fateme tekrar-only surround the div with main-->
   </div>

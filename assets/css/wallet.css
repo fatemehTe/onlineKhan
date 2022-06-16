@@ -1,10 +1,44 @@
-.table-tr{
+.table-tr {
     border: 2px solid black;
 }
-.pagination{
+
+.pagination {
     width: 20px;
     height: 20px;
     border-radius: 10px;
     text-align: center;
     font-size: 12px;
+}
+
+.wallet {
+    padding: 0 !important;
+    height: 50px !important;
+}
+
+.wallet .btn {
+    border-radius: 5px 0 0 5px;
+    padding: 0px 0px !important;
+    width: 60%;
+    height: 50px;
+    line-height: 13px;
+}
+
+.wallet input {
+    min-width: 10px;
+}
+
+.wallet input::placeholder {
+    color: #06a971;
+}
+
+.fa-chevron-down {
+    width: 5px;
+}
+
+.fa-sort-amount-desc {
+    color: #1976d2;
+}
+
+.table td th {
+    margin: auto;
 }
