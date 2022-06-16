@@ -32,7 +32,6 @@
   <!-- پیوند به فایل های استایل شیت و اسکریپت -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/dashboard.css" rel="stylesheet">
-  <link href="assets/css/shopping-bag.css" rel="stylesheet">
   <link href="assets/css/wallet.css" rel="stylesheet">
   <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
   <!--*****************************************************-->
@@ -426,7 +425,7 @@
         <!-- عنوان داشبرد من - عنوان صفحه -->
         <div class="row pt-5">
           <div class="col-12 pb-2">
-            <h2 class="h3 g-dashboard font-16">سبد خرید</h2>
+            <h2 class="h3 g-dashboard font-16">کیف پول</h2>
           </div>
           <div class="col-12">
             <div class="d-flex gap-2">
@@ -467,7 +466,7 @@
               </section>
             </div>
             <div class="col-md-9 col-sm-12 p-0">
-              <div class="basket bg-f2f2f2">
+              <div class="mainLayout bg-f2f2f2">
                 <section class="row wallet">
                   <div class="col-md-8 col-sm-8 col-8">
                     <div class="card border-0 justify-content-between d-flex flex-row text-muted align-items-center">
@@ -482,14 +481,13 @@
                 </section>
                 <div class="d-flex flex-row justify-content-between mb-1 mt-4">
                   <h5>تاریخچه کیف پول من</h5>
-                  <div class="dropdown">
+                  <div class="dropdown" id="dropDown">
                     <button class="btn btn-solid rounded-3 p-2" type="button" id="dropdownMenuButton1"
                       data-bs-toggle="dropdown" aria-expanded="false">
                       <div class="d-flex flex-row align-items-center my-auto">
                         <i class="fa fa-sort-amount-desc ms-2" aria-hidden="true"></i>
                         <p class="c-1976d2 my-auto">مرتب سازی</p>
                         <i class="fa fa-chevron-down ms-2 me-4" aria-hidden="true" id="chevron"></i>
-                        <!-- <i class="fa fa-chevron-up" aria-hidden="true"></i> -->
                       </div>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -515,26 +513,49 @@
                         <td class="p-4">۲۳۰.۰۰۰ تومان</td>
                         <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
-                            <div class="c-1976d2">شارژ شد</div>
-                            <i class="fa-light fa-trash fs-5 ps-4" data-bs-toggle="modal"
-                              data-bs-target="#exampleModalDelete2"></i>
+                            <div class="c-1976d2" id="tr1">شارژ شد</div>
+                            <i class="fa fa-trash fs-5 ps-4" data-bs-toggle="modal"
+                              data-bs-target="#exampleModalDelete1"></i>
                           </div>
                         </td>
                       </tr>
-                      <tr class="text-center tr2">
+                      <tr class="text-center">
                         <th scope="row" class="p-4">۲</th>
                         <td class="p-4">۱۴۰۱/۰۲/۲۳</td>
                         <td class="p-4">۲۳۰.۰۰۰ تومان</td>
                         <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
-                            <div class="c-ff0048">کسر شد</div>
-                            <i class="fa-light fa-trash fs-5 ps-4" data-bs-toggle="modal"
+                            <div class="c-1976d2" id="tr2">شارژ شد</div>
+                            <i class="fa fa-trash fs-5 ps-4" data-bs-toggle="modal"
                               data-bs-target="#exampleModalDelete2"></i>
                           </div>
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                  <!--Modal delete-->
+                  <div class="modal fade" id="exampleModalDelete1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header border-0 bg-danger position-relative">
+                          <i class="fa-light fa-times text-white fs-5 bg-danger close-btn position-absolute"
+                            data-bs-dismiss="modal"></i>
+                        </div>
+                        <div class="modal-body">
+                          آیا از حذف ردیف مطمین هستید؟
+                        </div>
+                        <div class="modal-footer border-0 d-flex flex-row justify-content-between">
+                          <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="deleteFromُTable1">حذف
+                            از کیف پول
+                            <i class="fa fa-trash text-white fs-5"></i>
+                          </button>
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Modal delete-->
                   <!--Modal delete-->
                   <div class="modal fade" id="exampleModalDelete2" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -548,9 +569,9 @@
                           آیا از حذف ردیف مطمین هستید؟
                         </div>
                         <div class="modal-footer border-0 d-flex flex-row justify-content-between">
-                          <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="deleteFromBasket1">حذف
+                          <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="deleteFromُTable2">حذف
                             از کیف پول
-                            <i class="fa-light fa-trash text-white fs-5"></i>
+                            <i class="fa fa-trash text-white fs-5"></i>
                           </button>
                           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
                         </div>
@@ -585,7 +606,6 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/shopping-bag.js"></script>
     <script src="assets/js/wallet.js"></script>
     <script src="assets/js/script.js"></script>
     <!--fateme tekrar-only surround the div with main-->

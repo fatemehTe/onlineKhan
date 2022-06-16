@@ -1,19 +1,25 @@
 /*fateme tekrar*/
-const deleteFromBasket1 = document.getElementById("deleteFromBasket1")
-const deleteFromBasket2 = document.getElementById("deleteFromBasket2")
 const chevron = document.getElementById("chevron")
+const dropDown = document.getElementById("dropDown")
+const deleteFromُTable1 = document.getElementById("deleteFromُTable1")
+const deleteFromُTable2 = document.getElementById("deleteFromُTable2")
+const tr1 = document.getElementById("tr1")
+const tr2 = document.getElementById("tr2")
 
 
-deleteFromBasket1.addEventListener("click", (e) => {
+
+dropDown.addEventListener("click", (e) => {
     e.stopPropagation();
-    book1.style = 'display: none';
+    chevron.classList.toggle("fa-chevron-up");
 })
-deleteFromBasket2.addEventListener("click", (e) => {
+deleteFromُTable1.addEventListener("click", (e) => {
     e.stopPropagation();
-    book2.style = 'display: none';
+    tr1.textContent = 'کسر شد';
+    tr1.style='color:#ff0048'
 })
-chevron.addEventListener("click", (e) => {
+deleteFromُTable2.addEventListener("click", (e) => {
     e.stopPropagation();
-    this.classList.toggle("fa-chevron-up");
+    tr2.textContent = 'کسر شد'
+    tr2.style='color:#ff0048'
 })
 /*fateme tekrar*/

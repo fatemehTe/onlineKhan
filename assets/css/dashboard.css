@@ -176,6 +176,30 @@
     max-width: 40%;
 }
 
+.mainLayout {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.mainLayout section {
+    margin-bottom: 15px;
+}
+
+.mainLayout-btn {
+    width: 100%;
+    margin-top: 40px;
+    min-width: auto;
+}
+
+.vl {
+    border-left: 2px solid #c2c2c2;
+}
+
+.verticalLine {
+    height: 30px;
+    border-left: 2px #c2c2c2 solid
+}
+
 /*wallet & question end*/
 /*fateme tekrar*/
 
