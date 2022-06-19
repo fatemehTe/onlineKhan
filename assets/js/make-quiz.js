@@ -1,5 +1,11 @@
 var checkboxes = document.getElementsByName('lv-name');
 const dropdownMenuLink = document.getElementById("dropdownMenuLink")
+const dropdownMenuLinkname = document.getElementById("dropdownMenuLinkname")
+const selects = document.getElementById("selects")
+var list = document.getElementById("list-group")
+var studentList = document.getElementById("student-list")
+var reportCount = document.getElementById("report-count")
+
 
 
 for (var checkbox of checkboxes) {
@@ -9,18 +15,84 @@ for (var checkbox of checkboxes) {
 }
 
 
-function myFunction(x) {
-    var str = dropdownMenuLink.textContent
-    var comma = false
-    str === 'انتخاب کنید' ? (null) : comma = true
+function addLevel(x) {
+    var str = dropdownMenuLink.innerText;
+    var clear;
+    str == 'انتخاب کنید' ? clear = true : clear = false
     if (x.checked) {
-        
-        str = str + (x.value)
-        dropdownMenuLink.append(x.value + (comma && ','))
-    } else {
-        str = str.replace(x.value + ',', '');
-        console.log(str)
-        dropdownMenuLink.textContent = str
-    }
+        clear ? str = '' : str = str + ', '
+        str += x.value
 
+        // var button = document.createElement("BUTTON");
+        // button.innerHTML = "X";
+        // dropdownMenuLink.appendChild(button);
+    } else {
+        var comma = str.indexOf(',') > -1;
+        console.log(comma)
+        str = str.includes(', ' + x.value) ?
+            str.replace(', ' + x.value, '') :
+            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
+        if (!comma) str = 'انتخاب کنید';
+    }
+    dropdownMenuLink.textContent = str
 }
+function clearFunction() {
+    dropdownMenuLink.textContent = 'انتخاب کنید'
+}
+function addName(x) {
+    var str = dropdownMenuLinkname.innerText;
+    var clear;
+    str == 'انتخاب کنید' ? clear = true : clear = false
+    if (x.checked) {
+        clear ? str = '' : str = str + ', '
+        str += x.value
+
+        // var button = document.createElement("BUTTON");
+        // button.innerHTML = "X";
+        // dropdownMenuLink.appendChild(button);
+    } else {
+        var comma = str.indexOf(',') > -1;
+        console.log(comma)
+        str = str.includes(', ' + x.value) ?
+            str.replace(', ' + x.value, '') :
+            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
+        if (!comma) str = 'انتخاب کنید';
+    }
+    dropdownMenuLinkname.textContent = str
+}
+
+selects.addEventListener('click', (e) => {
+    var studentCount = 0;
+    studentList.style = 'display:block'
+    e.preventDefault();
+    var data = []
+    var str = dropdownMenuLinkname.innerText
+    str !== 'انتخاب کنید' ?
+        (
+            data = dropdownMenuLinkname.innerText.split(', ')
+        ) : data = []
+    data.forEach((item) => {
+        let li = document.createElement("li");
+        let i = document.createElement("i")
+        li.innerText = item;
+        li.classList.add('list-group-item', 'pe-4', 'd-flex', 'flex-row', 'justify-content-between')
+        i.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5')
+        li.appendChild(i);
+        list.appendChild(li);
+        i.addEventListener('click', e => {
+            e.preventDefault()
+            studentCount = data.length - 1
+            reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ۲۵ دانش آموز`
+            i.parentNode.parentNode.removeChild(i.parentNode);
+            data = data.filter(function (f) { return f !== item })
+        })
+        studentCount = data.length
+    })
+
+    persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ۲۵ دانش آموز`
+})
+
+
+
+

@@ -44,14 +44,18 @@ ul.nav .nav-tabs .card-header-tabs {
     padding: 0px !important;
     border: 0px;
 }
-.education-label{
+
+.education-label {
     flex: 1;
 }
-.education-dropdown{
+
+.education-dropdown {
     flex: 3;
 }
+
 .student-list {
     height: auto;
+    display: none;
 }
 
 .st-list {
@@ -61,4 +65,9 @@ ul.nav .nav-tabs .card-header-tabs {
 
 .student-list .list-group {
     height: auto;
+}
+
+.dropdown .dropdown-toggle {
+    height: auto;
+    white-space: inherit;
 }

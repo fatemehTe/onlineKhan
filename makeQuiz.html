@@ -522,44 +522,43 @@
                               انتخاب مقطع تحصیلی:
                             </div>
                             <div class="dropdown">
-                              <a class="btn btn-light dropdown-toggle width-100" href="#" role="button"
-                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                انتخاب کنید
-                              </a>
+                              <a class="btn btn-light dropdown-toggle width-300px" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><span>انتخاب
+                                  کنید</span></a>
                               <ul class="dropdown-menu feature w-100 p-2 height-100 overflow-auto"
                                 aria-labelledby="dropdownMenuLink">
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="تمامی مقاطع تحصیلی ابتدایی" />
                                   <label for="lv-name">تمامی مقاطع تحصیلی ابتدایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="تمامی مقاطع تحصیلی راهنمایی" />
                                   <label for="lv-name">تمامی مقاطع تحصیلی راهنمایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="تمامی مقاطع تحصیلی دبیرستان" />
                                   <label for="lv-name">تمامی مقاطع تحصیلی دبیرستان</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="اول راهنمایی" />
                                   <label for="lv-name">اول راهنمایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="اول راهنمایی" />
                                   <label for="lv-name">اول راهنمایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="اول راهنمایی" />
                                   <label for="lv-name">اول راهنمایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="myFunction(this)"
+                                  <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
                                     value="اول راهنمایی" />
                                   <label for="lv-name">اول راهنمایی</label>
                                 </div>
@@ -571,27 +570,30 @@
                               انتخاب دانش آموز:
                             </div>
                             <div class="dropdown">
-                              <a class="btn btn-light dropdown-toggle  href=" #" role="button" id="dropdownMenuLink"
+                              <a class="btn btn-light dropdown-toggle  href=" #" role="button" id="dropdownMenuLinkname"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                وحید رضایی, سید وحید رضایی منش
-                              </a>
+                                <span>انتخاب کنید</span></a>
 
                               <ul class="dropdown-menu height-100 w-100 overflow-auto"
                                 aria-labelledby="dropdownMenuLink">
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="st-name" class="mx-1 my-1" />
+                                  <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                    value="وحید رضایی" />
                                   <label for="st-name">وحید رضایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="st-name" class="mx-1 my-1" />
+                                  <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                    value="سید وحید رضایی" />
                                   <label for="st-name">سید وحید رضایی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="st-name" class="mx-1 my-1" />
+                                  <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                    value="وحید رضایی سروستانی" />
                                   <label for="st-name">وحید رضایی سروستانی</label>
                                 </div>
                                 <div class="d-flex flex-row justify-content-start align-items-center">
-                                  <input type="checkbox" name="st-name" class="mx-1 my-1" />
+                                  <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                    value="سید وحید رضایی منش" />
                                   <label for="st-name">سید وحید رضایی منش</label>
                                 </div>
                               </ul>
@@ -601,53 +603,22 @@
                             <button class="btn btn-primary" type="submit" id="selects">انتخاب</button>
                           </section>
                         </form>
-                        <section class="student-list card px-4 pt-4 pb-1">
+                        <section class="student-list card px-4 pt-4 pb-1" id="student-list">
                           <div class="d-flex flex-row ">
                             <div class="flex-sm-fill">مشاهده لیست دانش آموزان انتخابی</div>
                             <div class="flex-lg-fill st-list">
-                              <ul class="list-group">
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
+                              <ul class="list-group" id="list-group">
+                                <!-- <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
                                   An item
                                   <i class="fa fa-trash text-dark fs-5"></i>
                                 </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
-                                <li class="list-group-item pe-4 d-flex flex-row justify-content-between">
-                                  An item
-                                  <i class="fa fa-trash text-dark fs-5"></i>
-                                </li>
+                              -->
                               </ul>
                             </div>
 
                           </div>
-                          <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696">
-                            تا کنون انتخاب ۶ دانش آموز از ۲۵ دانش آموز
+                          <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696" id="report-count">
+                            <!-- تا کنون انتخاب ۶ دانش آموز از ۲۵ دانش آموز -->
                           </section>
                         </section>
                       </section>
