@@ -124,3 +124,9 @@ ul.nav .nav-tabs .card-header-tabs {
 .list-list {
     flex: 3;
 }
+
+@media only screen and (max-width: 768px) {
+    .tagsContainer {
+        margin-right: 5px
+    }
+}
