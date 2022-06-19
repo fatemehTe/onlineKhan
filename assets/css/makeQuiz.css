@@ -1,6 +1,6 @@
 a-make-quiz {
     float: right;
-    height: 50px;
+    height: 49px;
     position: relative;
     border: 1px solid #06a971;
     border-left: none;
@@ -33,6 +33,16 @@ a-make-quiz:after {
     z-index: 1;
 }
 
+.myTests {
+    background-image: linear-gradient(90deg, #1976d2, #06a971);
+}
+
+.module-border-wrap {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-image: linear-gradient(to right, #06a971, #1976d2) 1;
+}
 
 ul.nav .nav-tabs .card-header-tabs {
     padding-right: 0px !important;
@@ -93,4 +103,24 @@ ul.nav .nav-tabs .card-header-tabs {
 
 .modal-header {
     height: 45px !important;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdownContainer,
+.listContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-label,
+.list-label {
+    flex: 1;
+}
+
+.dropdown,
+.list-list {
+    flex: 3;
 }

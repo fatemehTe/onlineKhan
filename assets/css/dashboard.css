@@ -152,6 +152,14 @@
     margin-bottom: 10px;
     margin-top: 7px;
 }
+.wallet-question div {
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 7px;
+}
 
 #question-send {
     width: 65%;

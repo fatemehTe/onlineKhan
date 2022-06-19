@@ -582,6 +582,10 @@ body.shrink .c-tooltip .c-tooltip-text {
 /*fateme tekrar*/
 /*customized buttons start*/
 
+.disabled:after {
+    background-color: #c4c4c4 !important;
+    border: 0px;
+}
 
 .disabled {
     background-color: #c4c4c4 !important;
@@ -632,7 +636,7 @@ body.shrink .c-tooltip .c-tooltip-text {
 }
 
 .btn-light {
-    background-color: #c2c2c2;
+    background-color: #f2f2f2;
     border: 0px;
 }
 
