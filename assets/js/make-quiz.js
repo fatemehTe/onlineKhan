@@ -5,6 +5,7 @@ const selects = document.getElementById("selects")
 var list = document.getElementById("list-group")
 var studentList = document.getElementById("student-list")
 var reportCount = document.getElementById("report-count")
+var stNames = document.getElementsByName("st-name")
 
 
 
@@ -36,9 +37,7 @@ function addLevel(x) {
     }
     dropdownMenuLink.textContent = str
 }
-function clearFunction() {
-    dropdownMenuLink.textContent = 'انتخاب کنید'
-}
+
 function addName(x) {
     var str = dropdownMenuLinkname.innerText;
     var clear;
@@ -62,9 +61,9 @@ function addName(x) {
 }
 
 selects.addEventListener('click', (e) => {
+    e.preventDefault();
     var studentCount = 0;
     studentList.style = 'display:block'
-    e.preventDefault();
     var data = []
     var str = dropdownMenuLinkname.innerText
     str !== 'انتخاب کنید' ?
@@ -91,6 +90,11 @@ selects.addEventListener('click', (e) => {
 
     persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
     reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ۲۵ دانش آموز`
+    dropdownMenuLinkname.textContent = 'انتخاب کنید'
+    var checkboxes = document.getElementsByName('st-name');
+    for (var checkbox of checkboxes) {
+        checkbox.checked = false;
+    }
 })
 
 
