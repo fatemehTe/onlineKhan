@@ -6,14 +6,8 @@ var list = document.getElementById("list-group")
 var studentList = document.getElementById("student-list")
 var reportCount = document.getElementById("report-count")
 var stNames = document.getElementsByName("st-name")
-
-
-
-for (var checkbox of checkboxes) {
-    if (checkbox.checked) {
-        dropdownMenuLink.append(checkbox.value + ' ');
-    }
-}
+var createStGroup = document.getElementById("create-st-group")
+var submitGroup = document.getElementById("submit-group")
 
 
 function addLevel(x) {
@@ -23,10 +17,6 @@ function addLevel(x) {
     if (x.checked) {
         clear ? str = '' : str = str + ', '
         str += x.value
-
-        // var button = document.createElement("BUTTON");
-        // button.innerHTML = "X";
-        // dropdownMenuLink.appendChild(button);
     } else {
         var comma = str.indexOf(',') > -1;
         console.log(comma)
@@ -45,10 +35,6 @@ function addName(x) {
     if (x.checked) {
         clear ? str = '' : str = str + ', '
         str += x.value
-
-        // var button = document.createElement("BUTTON");
-        // button.innerHTML = "X";
-        // dropdownMenuLink.appendChild(button);
     } else {
         var comma = str.indexOf(',') > -1;
         console.log(comma)
@@ -64,6 +50,7 @@ selects.addEventListener('click', (e) => {
     e.preventDefault();
     var studentCount = 0;
     studentList.style = 'display:block'
+    submitGroup.style = 'display:block'
     var data = []
     var str = dropdownMenuLinkname.innerText
     str !== 'انتخاب کنید' ?
@@ -78,9 +65,13 @@ selects.addEventListener('click', (e) => {
         i.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5')
         li.appendChild(i);
         list.appendChild(li);
+        createStGroup.classList.remove('disabled')
+        createStGroup.disabled = false
         i.addEventListener('click', e => {
             e.preventDefault()
             studentCount = data.length - 1
+            console.log(studentCount)
+            studentCount == 0 ? (createStGroup.classList.add('disabled'), createStGroup.disabled = true) : null
             reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ۲۵ دانش آموز`
             i.parentNode.parentNode.removeChild(i.parentNode);
             data = data.filter(function (f) { return f !== item })

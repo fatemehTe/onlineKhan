@@ -581,8 +581,10 @@ body.shrink .c-tooltip .c-tooltip-text {
 /* end When the menu shrinks */
 /*fateme tekrar*/
 /*customized buttons start*/
-.btn-solid {
-    background-color: #ffffff;
+
+
+.disabled {
+    background-color: #c4c4c4 !important;
     border: 0px;
 }
 
@@ -605,10 +607,11 @@ body.shrink .c-tooltip .c-tooltip-text {
     border: 0px;
 }
 
-.btn-secondary{
+.btn-secondary {
     background-color: #3d3d3d;
     border: 0px;
 }
+
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus {
@@ -616,20 +619,23 @@ body.shrink .c-tooltip .c-tooltip-text {
     border: 0px;
 }
 
-.btn-dark{
+.btn-dark {
     background-color: #000000;
     border: 0px;
 }
+
 .btn-dark:hover,
 .btn-dark:active,
 .btn-dark:focus {
     background-color: #333333;
     border: 0px;
 }
-.btn-light{
+
+.btn-light {
     background-color: #c2c2c2;
     border: 0px;
 }
+
 .btn-light:hover,
 .btn-light:active,
 .btn-light:focus {
@@ -676,10 +682,6 @@ body.shrink .c-tooltip .c-tooltip-text {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
-
-
-
-
 
 /*customized buttons end*/
 /*basic colors start*/

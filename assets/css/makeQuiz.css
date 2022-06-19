@@ -58,6 +58,10 @@ ul.nav .nav-tabs .card-header-tabs {
     display: none;
 }
 
+.submit-group {
+    display: none;
+}
+
 .st-list {
     height: 250px;
     overflow: auto;
@@ -70,4 +74,23 @@ ul.nav .nav-tabs .card-header-tabs {
 .dropdown .dropdown-toggle {
     height: auto;
     white-space: inherit;
+}
+
+#create-st-group-input {
+    border: 1px solid #06a971;
+    border-radius: 5px;
+}
+
+#create-st-group-input:focus,
+#create-st-group-input:active {
+    border: 1px solid #06a971;
+}
+
+.modal-close {
+    top: -8px;
+    left: -8px;
+}
+
+.modal-header {
+    height: 45px !important;
 }
