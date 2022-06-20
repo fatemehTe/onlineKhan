@@ -1,132 +1,137 @@
 a-make-quiz {
-    float: right;
-    height: 49px;
-    position: relative;
-    border: 1px solid #06a971;
-    border-left: none;
-    width: 125px;
-    margin-left: 30px;
-    text-align: center;
-    background-color: #06a971;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
+  float: right;
+  height: 49px;
+  position: relative;
+  border: 1px solid #06a971;
+  border-left: none;
+  width: 125px;
+  margin-left: 30px;
+  text-align: center;
+  background-color: #06a971;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
 }
 
 a-make-quiz:after {
-    border-end-end-radius: 50px;
-    content: "";
-    position: absolute;
-    top: 7px;
-    left: -17px;
-    width: 34px;
-    height: 34px;
-    border: 1px solid #06a971;
-    background-color: #06a971;
-    border-left: none;
-    border-bottom: none;
-    -webkit-transform: rotate(225deg);
-    -moz-transform: rotate(225deg);
-    transform: rotate(225deg);
-    z-index: 1;
+  border-end-end-radius: 50px;
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -17px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #06a971;
+  background-color: #06a971;
+  border-left: none;
+  border-bottom: none;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225deg);
+  z-index: 1;
 }
 
 .myTests {
-    background-image: linear-gradient(90deg, #1976d2, #06a971);
+  background-image: linear-gradient(90deg, #1976d2, #06a971);
 }
 
 .module-border-wrap {
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 5px;
-    border-image: linear-gradient(to right, #06a971, #1976d2) 1;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  border-image: linear-gradient(to right, #06a971, #1976d2) 1;
 }
 
 ul.nav .nav-tabs .card-header-tabs {
-    padding-right: 0px !important;
-    border: 0px
+  padding-right: 0px !important;
+  border: 0px
 }
 
 .card-header-tabs {
-    background: transparent;
-    padding: 0px !important;
-    border: 0px;
+  background: transparent;
+  padding: 0px !important;
+  border: 0px;
 }
 
 .education-label {
-    flex: 1;
+  flex: 1;
 }
 
 .education-dropdown {
-    flex: 3;
+  flex: 3;
 }
 
 .student-list {
-    height: auto;
-    display: none;
+  height: auto;
+  display: none;
 }
 
 .submit-group {
-    display: none;
+  display: none;
 }
 
 .st-list {
-    height: 250px;
-    overflow: auto;
+  height: 250px;
+  overflow: auto;
 }
 
 .student-list .list-group {
-    height: auto;
+  height: auto;
 }
 
 .dropdown .dropdown-toggle {
-    height: auto;
-    white-space: inherit;
+  height: auto;
+  white-space: inherit;
 }
 
 #create-st-group-input {
-    border: 1px solid #06a971;
-    border-radius: 5px;
+  border: 1px solid #06a971;
+  border-radius: 5px;
 }
 
 #create-st-group-input:focus,
 #create-st-group-input:active {
-    border: 1px solid #06a971;
+  border: 1px solid #06a971;
 }
 
 .modal-close {
-    top: -8px;
-    left: -8px;
+  top: -8px;
+  left: -8px;
 }
 
 .modal-header {
-    height: 45px !important;
+  height: 45px !important;
 }
 
 .dropdown-toggle::after {
-    display: none;
+  display: none;
 }
 
 .dropdownContainer,
 .listContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .dropdown-label,
 .list-label {
-    flex: 1;
+  flex: 1;
 }
 
 .dropdown,
 .list-list {
-    flex: 3;
+  flex: 3;
 }
 
+.student-list .list-group {
+  width: 100% !important;
+}
+
+
 @media only screen and (max-width: 768px) {
-    .tagsContainer {
-        margin-right: 5px
-    }
+  .tagsContainer {
+    margin-right: 5px
+  }
 }
