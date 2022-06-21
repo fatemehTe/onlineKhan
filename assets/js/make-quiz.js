@@ -108,7 +108,7 @@ selects.addEventListener('click', (e) => {
             globalStudentSelectCount = studentCount
             studentCount == 0 ? (createStGroup.classList.add('disabled'), createStGroup.disabled = true) : null
             reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
-            i.parentNode.parentNode.parentNode.removeChild(i.parentNode.parentNode);
+            i.parentNode.parentNode.removeChild(i.parentNode);
             studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
         studentCount = studentNamesInList.length
