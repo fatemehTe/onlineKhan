@@ -7,6 +7,8 @@ var studentNamesInListGroup = [];
 var studentGroupObjArray = [];
 // The array of objects of students with group names in list used in second tab
 var studentGroupObjArrayInList = []
+//key value for the index of the student group we choose
+var keyValueArray = []
 
 var stLevel = document.getElementsByName('lv-name');
 const dropdownMenuLink = document.getElementById("dropdownMenuLink")
@@ -134,6 +136,7 @@ selects.addEventListener('click', (e) => {
         childDiv.innerHTML = ''
         makeStudentGroupList()
     })
+
 })
 
 function addTostudentGroupObjArray(arr, name, obj) {
@@ -198,13 +201,24 @@ function addLevelGroup(x) {
 }
 
 function addNameGroup(x) {
-    console.log(x.value)
+    var keyValue = {
+        key: 0,
+        value: ''
+    }
     var str = dropdownMenuLinknameGroup.innerText;
     var clear;
     str == 'انتخاب کنید' ? clear = true : clear = false
     if (x.checked) {
-        clear ? str = '' : str = str + ', '
+        if (clear === true) {
+            str = '';
+            // keyValueArray = []
+        } else {
+            str = str + ', ';
+        }
         str += x.value
+        // keyValue.key = x.id
+        // keyValue.value = x.value
+        // keyValueArray.push(keyValue)
     } else {
         var comma = str.indexOf(',') > -1;
         console.log(comma)
@@ -212,6 +226,7 @@ function addNameGroup(x) {
             str.replace(', ' + x.value, '') :
             str.includes(x.value) ? str.replace(x.value + ', ', '') : null
         if (!comma) str = 'انتخاب کنید';
+        // keyValueArray.pop(keyValue)
     }
     dropdownMenuLinknameGroup.textContent = str
 }
@@ -242,8 +257,10 @@ selectsGroup.addEventListener('click', (e) => {
             iEye.classList.add('fa', 'fa-eye', 'text-dark', 'fs-5')
 
             iEye.setAttribute('aria-hidden', 'true')
-            iEye.setAttribute('studentNamesInDropDown-bs-toggle', 'modal')
-            iEye.setAttribute('studentNamesInDropDown-bs-target', '#seeStudentModal')
+            iEye.setAttribute('data-bs-toggle', 'modal')
+            iEye.setAttribute('data-bs-target', '#seeStudentModal')
+            // iEye.setAttribute('key', `${studentNamesInListGroup.indexOf(item)}`)
+            iEye.setAttribute('onClick', `eyeClicked(this)`)
 
             div.appendChild(iEye);
             div.appendChild(i);
@@ -264,10 +281,10 @@ selectsGroup.addEventListener('click', (e) => {
             studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
         studentCount = studentNamesInListGroup.length
-        iEye.addEventListener('click', e => {
-            e.preventDefault()
-            console.log(3)
-        })
+        // iEye.addEventListener('click', e => {
+        //     e.preventDefault()
+        //     console.log(this.key)
+        // })
     })
 
     var stLevelGroup = document.getElementsByName('st-name-group');
@@ -278,3 +295,8 @@ selectsGroup.addEventListener('click', (e) => {
     reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
     dropdownMenuLinknameGroup.textContent = 'انتخاب کنید'
 })
+
+
+function eyeClicked(x) {
+    console.log(x.key + "OOOOOOOOOO")
+}
