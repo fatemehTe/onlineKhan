@@ -29,7 +29,9 @@ var studentListGroup = document.getElementById("student-list-group")
 var reportCountGroup = document.getElementById("report-count-group")
 var createStGroupGroup = document.getElementById("create-st-group-group")
 var submitGroupGroup = document.getElementById("submit-group-group")
-var ulMenueLinknameGroup = document.getElementById("ulMenueLinkname-group-overflow")
+var parent = document.getElementById("ulMenueLinkname-group")
+var childDiv = document.getElementById("ulMenueLinkname-group-overflow")
+
 
 
 
@@ -124,18 +126,32 @@ selects.addEventListener('click', (e) => {
         }
         e.preventDefault()
         var groupName = createStGroupInput.value
-        studentGroupObj.name = groupName;
+        studentGroupObj.groupName = groupName;
         studentGroupObj.studentArray = studentNamesInList
-        add(studentGroupObjArray, groupName, studentGroupObj);
+        addTostudentGroupObjArray(studentGroupObjArray, groupName, studentGroupObj);
+        childDiv.innerHTML = ''
+        makeStudentGroupList()
     })
 })
-function add(arr, name, obj) {
-    const found = arr.some(el => el.name === name);
+function addTostudentGroupObjArray(arr, name, obj) {
+    const found = arr.some(el => el.groupName === name);
+    console.log(found)
     if (!found) arr.push(obj);
-    return arr;
 }
 
-// for second tab
+function addTostudentGroupObjArrayInList(x, y) {
+
+    for (i = 0; i < x.length; i++) {
+        for (j = 0; j < y.length; j++) {
+            if (x[i].groupName == y[j].groupName) {
+                y.pop(y[j])
+            }
+        }
+    }
+    x.push(y)
+    console.log(x)
+}
+// for second tabsecond
 
 function makeStudentGroupList() {
 
@@ -149,17 +165,15 @@ function makeStudentGroupList() {
         input.name = 'st-name-group'
         input.type = "checkbox"
         input.setAttribute('onclick', 'addNameGroup(this)')
-        input.value = studentGroupObjArray[i].name
+        input.value = studentGroupObjArray[i].groupName
         input.id = i
         label.for = 'st-name-group'
-        label.innerText = studentGroupObjArray[i].name
+        label.innerText = studentGroupObjArray[i].groupName
 
         div.appendChild(input)
         div.appendChild(label)
-        ulMenueLinknameGroup.appendChild(div)
+        childDiv.appendChild(div)
     }
-
-
 }
 
 function addLevelGroup(x) {
@@ -236,7 +250,6 @@ selectsGroup.addEventListener('click', (e) => {
         i.addEventListener('click', e => {
             e.preventDefault()
             studentCount = studentNamesInDropDown.length - 1
-            console.log(studentCount)
             studentCount == 0 ? (createStGroupGroup.classList.add('disabled'), createStGroupGroup.disabled = true) : null
             reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
             i.parentNode.parentNode.removeChild(i.parentNode);
@@ -257,6 +270,7 @@ selectsGroup.addEventListener('click', (e) => {
     reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
     dropdownMenuLinknameGroup.textContent = 'انتخاب کنید'
 })
+
 
 
 
