@@ -497,7 +497,7 @@
                           آموز</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#static">انتخاب گروه دانش آموزی</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#studentGroup-select">انتخاب گروه دانش آموزی</a>
                       </li>
                     </ul>
                     <i class="fa fa-question-circle p-2" aria-hidden="true" data-bs-toggle="modal"
@@ -625,7 +625,7 @@
                           <div class="listContainer">
                             <div class="list-label c-1976d2">مشاهده لیست دانش آموزان انتخابی</div>
                             <div class="list-list st-list">
-                              <ul class="list-group" >
+                              <ul class="list-group overflow-hidden">
                                 <div class="force-overflow w-100 scrollbar scrollbar-primary" id="list-group"></div>
                               </ul>
                             </div>
@@ -640,11 +640,152 @@
                           id="create-st-group-input" />
                         <button class="btn btn-success text-white w-100 p-2 m-0 disabled" id="create-st-group"
                           disabled>تشکیل و انتخاب گروه
-                          دانش آموزیی</button>
+                          دانش آموزی</button>
                       </section>
                     </div>
-                    <div class="tab-pane" id="static">
-                      <p class=" card-text">Change Static Network settings.</p>
+                    <!-- second tab -->
+                    <div class="tab-pane" id="studentGroup-select" onclick="makeStudentGroupList()">
+                      <section class="mx-5">
+                        <form>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2">
+                              انتخاب مقطع تحصیلی:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLink-group">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                              <ul
+                                class="dropdown-menu feature w-100 p-2 height-100 overflow-auto scrollbar scrollbar-primary"
+                                aria-labelledby="dropdownMenuLink-group">
+                                <div class="force-overflow">
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی ابتدایی" />
+                                    <label for="lv-name-group">تمامی مقاطع تحصیلی ابتدایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی راهنمایی" />
+                                    <label for="lv-name-group">تمامی مقاطع تحصیلی راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی دبیرستان" />
+                                    <label for="lv-name-group">تمامی مقاطع تحصیلی دبیرستان</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group">اول راهنمایی</label>
+                                  </div>
+                                </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2">
+                              انتخاب گروه دانش آموزی:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLinkname-group">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                              </a>
+                              <ul class="dropdown-menu height-100 w-100 overflow-auto scrollbar scrollbar-primary"
+                                aria-labelledby=" dropdownMenuLink-group" id="ulMenueLinkname-group">
+                                <div class="force-overflow" id="ulMenueLinkname-group-overflow">
+                                  <!-- <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۱ ریاضی" />
+                                    <label for="st-name-group">گروه ۱ ریاضی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۲ ریاضی" />
+                                    <label for="st-name-group">گروه ۲ ریاضی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۱ تجربی" />
+                                    <label for="st-name-group">گروه ۱ تجربی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۲ تجربی" />
+                                    <label for="st-name-group">گروه ۲ تجربی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۱ انسانی" />
+                                    <label for="st-name-group">گروه ۱ انسانی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name-group" class="mx-1 my-1"
+                                      onclick="addNameGroup(this)" value="گروه ۲ انسانی" />
+                                    <label for="st-name-group">گروه ۲ انسانی</label>
+                                  </div> -->
+                                </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="d-flex flex-row justify-content-end">
+                            <button class="btn btn-primary px-5 py-2" type="submit" id="selects-group">انتخاب</button>
+                          </section>
+                        </form>
+                        <section class="student-list card px-4 pt-4 pb-1" id="student-list-group">
+                          <div class="listContainer">
+                            <div class="list-label c-1976d2">مشاهده لیست دانش آموزان انتخابی</div>
+                            <div class="list-list st-list">
+                              <ul class="list-group overflow-hidden">
+                                <div class="force-overflow w-100 scrollbar scrollbar-primary" id="list-group-group">
+                                </div>
+                              </ul>
+                            </div>
+                          </div>
+                          <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696"
+                            id="report-count-group">
+                          </section>
+                        </section>
+                        <!--MODAL-->
+                        <div class="modal fade" id="seeStudentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-body d-flex flex-row justify-content-center">
+                              <img src="./assets/images/addStudent.jpg" width="auto" height="500"
+                                class="p-1 bg-white rounded-1" />
+                              <div class="position-relative">
+                                <img src="./assets/images/close.png" width="auto" height="35"
+                                  class="p-0 bg-white rounded-5 position-absolute modal-close" />
+                              </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <!--MODAL-->
+                      </section>
+                      <section class="d-flex mt-6 submit-group justify-content-end" id="submit-group-group">
+                        <button class="btn btn-success text-white p-2 px-5 m-0 disabled" id="create-st-group-group"
+                          disabled>انتخاب گروه
+                          دانش آموزی</button>
+                      </section>
                     </div>
 
                   </div>
