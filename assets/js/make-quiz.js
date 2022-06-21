@@ -1,6 +1,8 @@
 var globalStudentSelectCount = 0;
 // The array of student names in first tabs list
 var studentNamesInList = [];
+// The array of studentGroups names in second tabs list
+var studentNamesInListGroup = [];
 // The array of objects of students with group names used in second tab
 var studentGroupObjArray = [];
 // The array of objects of students with group names in list used in second tab
@@ -104,7 +106,7 @@ selects.addEventListener('click', (e) => {
             globalStudentSelectCount = studentCount
             studentCount == 0 ? (createStGroup.classList.add('disabled'), createStGroup.disabled = true) : null
             reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
-            i.parentNode.parentNode.removeChild(i.parentNode);
+            i.parentNode.parentNode.parentNode.removeChild(i.parentNode.parentNode);
             studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
         studentCount = studentNamesInList.length
@@ -133,6 +135,7 @@ selects.addEventListener('click', (e) => {
         makeStudentGroupList()
     })
 })
+
 function addTostudentGroupObjArray(arr, name, obj) {
     const found = arr.some(el => el.groupName === name);
     console.log(found)
@@ -222,40 +225,45 @@ selectsGroup.addEventListener('click', (e) => {
     var str = dropdownMenuLinknameGroup.innerText
     str !== 'انتخاب کنید' ?
         (
-            studentNamesInDropDown = dropdownMenuLinknameGroup.innerText.split(', ')
+            studentNamesInDropDown = str.split(', ')
         ) : studentNamesInDropDown = []
     studentNamesInDropDown.forEach((item) => {
+
         let li = document.createElement("li");
         let i = document.createElement("i")
         let iEye = document.createElement("i")
         let div = document.createElement("div")
+        if (!studentNamesInListGroup.includes(item)) {
+            div.classList.add('d-flex', 'flex-row', 'justify-content-between')
+            div.style = 'width:50px'
+            li.innerText = item;
+            li.classList.add('list-group-item', 'pe-4', 'd-flex', 'flex-row', 'justify-content-between')
+            i.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5')
+            iEye.classList.add('fa', 'fa-eye', 'text-dark', 'fs-5')
 
-        div.classList.add('d-flex', 'flex-row', 'justify-content-between')
-        div.style = 'width:50px'
-        li.innerText = item;
-        li.classList.add('list-group-item', 'pe-4', 'd-flex', 'flex-row', 'justify-content-between')
-        i.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5')
-        iEye.classList.add('fa', 'fa-eye', 'text-dark', 'fs-5')
+            iEye.setAttribute('aria-hidden', 'true')
+            iEye.setAttribute('studentNamesInDropDown-bs-toggle', 'modal')
+            iEye.setAttribute('studentNamesInDropDown-bs-target', '#seeStudentModal')
 
-        iEye.setAttribute('aria-hidden', 'true')
-        iEye.setAttribute('studentNamesInDropDown-bs-toggle', 'modal')
-        iEye.setAttribute('studentNamesInDropDown-bs-target', '#seeStudentModal')
+            div.appendChild(iEye);
+            div.appendChild(i);
+            li.appendChild(div);
+            listGroup.appendChild(li);
+            studentNamesInListGroup.push(item)
+        }
 
-        div.appendChild(iEye);
-        div.appendChild(i);
-        li.appendChild(div);
-        listGroup.appendChild(li);
         createStGroupGroup.classList.remove('disabled')
         createStGroupGroup.disabled = false
         i.addEventListener('click', e => {
             e.preventDefault()
-            studentCount = studentNamesInDropDown.length - 1
+            studentNamesInListGroup.pop(i.value)
+            studentCount = studentNamesInListGroup.length
             studentCount == 0 ? (createStGroupGroup.classList.add('disabled'), createStGroupGroup.disabled = true) : null
             reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
-            i.parentNode.parentNode.removeChild(i.parentNode);
+            i.parentNode.parentNode.parentNode.removeChild(i.parentNode.parentNode);
             studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
-        studentCount = studentNamesInDropDown.length
+        studentCount = studentNamesInListGroup.length
         iEye.addEventListener('click', e => {
             e.preventDefault()
             console.log(3)
@@ -270,7 +278,3 @@ selectsGroup.addEventListener('click', (e) => {
     reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
     dropdownMenuLinknameGroup.textContent = 'انتخاب کنید'
 })
-
-
-
-
