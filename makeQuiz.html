@@ -491,12 +491,12 @@
                 <div class="card">
                   <div class="card-header d-flex flex-row justify-content-between">
                     <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
-                      <li class="nav-item">
+                      <li class="nav-item tab">
                         <a class="nav-link active" aria-current="true" data-bs-toggle="tab"
                           href="#student-select">انتخاب دانش
                           آموز</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item tab">
                         <a class="nav-link" data-bs-toggle="tab" href="#studentGroup-select">انتخاب گروه دانش آموزی</a>
                       </li>
                     </ul>
@@ -722,7 +722,7 @@
                         </form>
                         <section class="student-list card px-4 pt-4 pb-1" id="student-list-group">
                           <div class="listContainer">
-                            <div class="list-label c-1976d2">مشاهده لیست دانش آموزان انتخابی</div>
+                            <div class="list-label c-1976d2">مشاهده لیست گروه های انتخابی</div>
                             <div class="list-list st-list">
                               <ul class="list-group overflow-hidden">
                                 <div class="force-overflow w-100 scrollbar scrollbar-primary" id="list-group-group">
@@ -775,6 +775,36 @@
 
                   </div>
                 </div>
+
+                <!--MODAL-->
+                <div class="modal fade" id="finalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header border-0 bg-success position-relative text-white">
+                        مشاهده دانش آموزان گروه
+                        <i class=" fa-light fa-times text-white fs-5 bg-success close-btn position-absolute"
+                          data-bs-dismiss="modal"></i>
+                      </div>
+                      <div class="modal-body d-flex flex-column m-2 " id="studentGroupConfirmDataParent">
+                        گروه های دانش آموزی:
+                        <ul class="list-group overflow-hidden pe-0">
+                          <div class="w-100 c-06a971" id="studentGroupConfirmData"></div>
+                        </ul>
+                        برای این آزمون, با موفقیت انتخاب شدند.
+                      </div>
+                      <div class="modal-footer border-0 d-flex flex-row">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="confirmChanges">تایید
+                          و رفتن به مرحله بعد
+                        </button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--MODAL-->
+                <button class="btn btn-success mt-2" id="finalConfirmButton" aria-hidden="true" data-bs-toggle="modal"
+                  data-bs-target="#finalConfirm">تایید نهایی</button>
               </div>
               <!--fateme tekrar tabs-end-->
             </div>

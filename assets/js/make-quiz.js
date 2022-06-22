@@ -40,8 +40,29 @@ var parent = document.getElementById("ulMenueLinkname-group")
 var childDiv = document.getElementById("ulMenueLinkname-group-overflow")
 var seeModal = document.getElementById("seeModal")
 var reportCountStudent = document.getElementById("report-count-student")
+var studentGroupConfirmData = document.getElementById("studentGroupConfirmData")
+var studentGroupConfirmDataParent = document.getElementById("studentGroupConfirmDataParent")
+var finalConfirmButton = document.getElementById("finalConfirmButton")
 
 
+finalConfirmButton.addEventListener('click', e => {
+    e.preventDefault()
+    studentGroupConfirmData.innerHTML = ''
+    let li = document.createElement('li')
+    li.innerText = 'هنوز گروه دانش آموزی تشکیل نشده است.'
+
+    if (!studentGroupObjArray.length) {
+        studentGroupConfirmDataParent.innerHTML = ''
+        studentGroupConfirmDataParent.appendChild(li)
+    }
+    else {
+        studentGroupObjArray.forEach((item) => {
+            let li = document.createElement('li')
+            li.innerText = item.groupName
+            studentGroupConfirmData.appendChild(li)
+        })
+    }
+})
 
 function addLevel(x) {
     var str = dropdownMenuLink.innerText;
@@ -69,7 +90,6 @@ function addName(x) {
         str += x.value
     } else {
         var comma = str.indexOf(',') > -1;
-        console.log(comma)
         str = str.includes(', ' + x.value) ?
             str.replace(', ' + x.value, '') :
             str.includes(x.value) ? str.replace(x.value + ', ', '') : null
@@ -113,6 +133,7 @@ selects.addEventListener('click', (e) => {
         })
         studentCount = studentNamesInList.length
         globalStudentSelectCount = studentCount
+
     })
 
     var stLevel = document.getElementsByName('st-name');
@@ -122,6 +143,7 @@ selects.addEventListener('click', (e) => {
     persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
     reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
     dropdownMenuLinkname.textContent = 'انتخاب کنید'
+
 
 })
 createStGroup.addEventListener('click', e => {
@@ -167,6 +189,24 @@ function makeStudentGroupList() {
         div.appendChild(label)
         childDiv.appendChild(div)
     }
+
+    finalConfirmButton.addEventListener('click', e => {
+        e.preventDefault()
+        studentGroupConfirmData.innerHTML = ''
+        let li = document.createElement('li')
+        li.innerText = 'هنوز تشکیل دانش آموزی تشکیل نشده است.'
+        console.log(studentGroupObjArray.length + "kkkk")
+
+
+        !studentGroupObjArray.length ?
+            studentGroupConfirmData.appendChild(li)
+
+            : studentGroupObjArray.forEach((item) => {
+                let li = document.createElement('li')
+                li.innerText = item.groupName
+                studentGroupConfirmData.appendChild(li)
+            })
+    })
 }
 
 function addLevelGroup(x) {
@@ -295,13 +335,12 @@ function eyeClicked(x) {
     var str = '';
     var studentCount = 0;
     var eyeArray = []
+    let div = document.createElement('div')
 
     str = studentGroupObjArray[x.name].studentArray;
     eyeArray = str.length > 0 ? str.split(',') : []
     studentCount = eyeArray.length
     reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
-
-    let div = document.createElement('div')
 
     eyeArray.forEach((item) => {
         let icon = document.createElement('i')
@@ -345,3 +384,6 @@ function linkIconAndKeyValue(value, arr) {
     }
     return -1
 }
+
+
+

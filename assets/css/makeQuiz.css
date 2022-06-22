@@ -49,6 +49,26 @@ ul.nav .nav-tabs .card-header-tabs {
   border: 0px
 }
 
+.card-header {
+  background-color: #f2f2f2;
+}
+
+.tab a.nav-link {
+  background-color: #d9d9d9 !important;
+  color: #969696;
+  margin-left: 5px !important;
+}
+
+.tab a.nav-link.active {
+  color: #000 !important;
+  background-color: #ffffff !important;
+  transition: opacity .2 ease;
+}
+
+.tab a.nav-link:hover {
+  color: #000 !important;
+}
+
 .card-header-tabs {
   background: transparent;
   padding: 0px !important;
