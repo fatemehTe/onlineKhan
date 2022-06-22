@@ -734,18 +734,33 @@
                             id="report-count-group">
                           </section>
                         </section>
+
                         <!--MODAL-->
                         <div class="modal fade" id="seeStudentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                           aria-hidden="true">
                           <div class="modal-dialog">
-                            <div class="modal-body d-flex flex-row justify-content-center">
-                              <img src="./assets/images/addStudent.jpg" width="auto" height="500"
-                                class="p-1 bg-white rounded-1" />
-                              <div class="position-relative">
-                                <img src="./assets/images/close.png" width="auto" height="35"
-                                  class="p-0 bg-white rounded-5 position-absolute modal-close" />
+                            <div class="modal-content">
+                              <div class="modal-header border-0 bg-info position-relative text-white">
+                                مشاهده دانش آموزان گروه
+                                <i class=" fa-light fa-times text-white fs-5 bg-info close-btn position-absolute"
+                                  data-bs-dismiss="modal"></i>
                               </div>
-                              </a>
+                              <div class="modal-body d-flex flex-column card m-2">
+                                <div class="list-list st-list">
+                                  <ul class="list-group overflow-hidden">
+                                    <div class="force-overflow w-100 scrollbar scrollbar-primary" id="seeModal"></div>
+                                  </ul>
+                                </div>
+                                <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696"
+                                  id="report-count-student">
+                                </section>
+                              </div>
+                              <div class="modal-footer border-0 d-flex flex-row">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                  id="confirmChanges">تایید و بازگشت
+                                </button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بازگشت</button>
+                              </div>
                             </div>
                           </div>
                         </div>

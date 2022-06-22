@@ -9,6 +9,8 @@ var studentGroupObjArray = [];
 var studentGroupObjArrayInList = []
 //key value for the index of the student group we choose
 var keyValueArray = []
+//to convert
+persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 
 var stLevel = document.getElementsByName('lv-name');
 const dropdownMenuLink = document.getElementById("dropdownMenuLink")
@@ -35,7 +37,8 @@ var createStGroupGroup = document.getElementById("create-st-group-group")
 var submitGroupGroup = document.getElementById("submit-group-group")
 var parent = document.getElementById("ulMenueLinkname-group")
 var childDiv = document.getElementById("ulMenueLinkname-group-overflow")
-
+var seeModal = document.getElementById("seeModal")
+var reportCountStudent = document.getElementById("report-count-student")
 
 
 
@@ -48,7 +51,6 @@ function addLevel(x) {
         str += x.value
     } else {
         var comma = str.indexOf(',') > -1;
-        console.log(comma)
         str = str.includes(', ' + x.value) ?
             str.replace(', ' + x.value, '') :
             str.includes(x.value) ? str.replace(x.value + ', ', '') : null
@@ -90,8 +92,6 @@ selects.addEventListener('click', (e) => {
         let li = document.createElement("li");
         let i = document.createElement("i")
         if (!studentNamesInList.includes(item)) {
-            console.log(studentNamesInList.includes(item))
-            console.log(studentNamesInList)
             li.innerText = item;
             li.classList.add('list-group-item', 'pe-4', 'd-flex', 'flex-row', 'justify-content-between')
             i.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5')
@@ -103,13 +103,12 @@ selects.addEventListener('click', (e) => {
         createStGroup.disabled = false
         i.addEventListener('click', e => {
             e.preventDefault()
-            studentNamesInList.pop(i.value)
+            studentNamesInList.pop(i.parentNode.innerText)
             studentCount = studentNamesInList.length
             globalStudentSelectCount = studentCount
             studentCount == 0 ? (createStGroup.classList.add('disabled'), createStGroup.disabled = true) : null
             reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
             i.parentNode.parentNode.removeChild(i.parentNode);
-            studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
         studentCount = studentNamesInList.length
         globalStudentSelectCount = studentCount
@@ -123,40 +122,32 @@ selects.addEventListener('click', (e) => {
     reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
     dropdownMenuLinkname.textContent = 'انتخاب کنید'
 
-    createStGroup.addEventListener('click', e => {
-        var studentGroupObj = {
-            groupName: '',
-            studentArray: []
-        }
-        e.preventDefault()
-        var groupName = createStGroupInput.value
-        studentGroupObj.groupName = groupName;
-        studentGroupObj.studentArray = studentNamesInList
-        addTostudentGroupObjArray(studentGroupObjArray, groupName, studentGroupObj);
-        childDiv.innerHTML = ''
-        makeStudentGroupList()
-    })
+    for (i = 0; i < studentGroupObjArray.length; i++) {
+        console.log("n*: " + studentGroupObjArray[i].groupName)
+        console.log("s*: " + studentGroupObjArray[i].studentArray)
+    }
 
 })
-
-function addTostudentGroupObjArray(arr, name, obj) {
-    const found = arr.some(el => el.groupName === name);
-    console.log(found)
-    if (!found) arr.push(obj);
-}
-
-function addTostudentGroupObjArrayInList(x, y) {
-
-    for (i = 0; i < x.length; i++) {
-        for (j = 0; j < y.length; j++) {
-            if (x[i].groupName == y[j].groupName) {
-                y.pop(y[j])
-            }
-        }
+createStGroup.addEventListener('click', e => {
+    let studentGroupObj = {
+        groupName: '',
+        studentArray: ''
     }
-    x.push(y)
-    console.log(x)
-}
+    e.preventDefault()
+    var groupName = createStGroupInput.value
+    var studentArrayEach = studentNamesInList.toString()
+    studentGroupObj.groupName = groupName;
+    studentGroupObj.studentArray = studentArrayEach;
+
+    const found = studentGroupObjArray.some(el => el.groupName === groupName);
+    if (!found) studentGroupObjArray.push(studentGroupObj);
+
+
+    childDiv.innerHTML = ''
+    makeStudentGroupList()
+})
+
+
 // for second tabsecond
 
 function makeStudentGroupList() {
@@ -191,7 +182,6 @@ function addLevelGroup(x) {
         str += x.value
     } else {
         var comma = str.indexOf(',') > -1;
-        console.log(comma)
         str = str.includes(', ' + x.value) ?
             str.replace(', ' + x.value, '') :
             str.includes(x.value) ? str.replace(x.value + ', ', '') : null
@@ -211,24 +201,32 @@ function addNameGroup(x) {
     if (x.checked) {
         if (clear === true) {
             str = '';
-            // keyValueArray = []
+            keyValueArray = []
         } else {
             str = str + ', ';
         }
         str += x.value
-        // keyValue.key = x.id
-        // keyValue.value = x.value
-        // keyValueArray.push(keyValue)
+        keyValue.key = x.id
+        keyValue.value = x.value
+        keyValueArray.push(keyValue)
     } else {
         var comma = str.indexOf(',') > -1;
-        console.log(comma)
         str = str.includes(', ' + x.value) ?
             str.replace(', ' + x.value, '') :
             str.includes(x.value) ? str.replace(x.value + ', ', '') : null
         if (!comma) str = 'انتخاب کنید';
-        // keyValueArray.pop(keyValue)
+        removeElementFromArray(x.value, keyValueArray)
+
     }
     dropdownMenuLinknameGroup.textContent = str
+}
+
+function removeElementFromArray(value, arr) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i].value === value) {
+            arr.splice(i, 1)
+        }
+    }
 }
 
 selectsGroup.addEventListener('click', (e) => {
@@ -242,6 +240,7 @@ selectsGroup.addEventListener('click', (e) => {
         (
             studentNamesInDropDown = str.split(', ')
         ) : studentNamesInDropDown = []
+
     studentNamesInDropDown.forEach((item) => {
 
         let li = document.createElement("li");
@@ -259,7 +258,9 @@ selectsGroup.addEventListener('click', (e) => {
             iEye.setAttribute('aria-hidden', 'true')
             iEye.setAttribute('data-bs-toggle', 'modal')
             iEye.setAttribute('data-bs-target', '#seeStudentModal')
-            // iEye.setAttribute('key', `${studentNamesInListGroup.indexOf(item)}`)
+            let key = linkIconAndKeyValue(item, keyValueArray)
+
+            iEye.name = `${key}`
             iEye.setAttribute('onClick', `eyeClicked(this)`)
 
             div.appendChild(iEye);
@@ -273,7 +274,7 @@ selectsGroup.addEventListener('click', (e) => {
         createStGroupGroup.disabled = false
         i.addEventListener('click', e => {
             e.preventDefault()
-            studentNamesInListGroup.pop(i.value)
+            studentNamesInListGroup.pop(i.parentNode.parentNode.parentNode.innerText)
             studentCount = studentNamesInListGroup.length
             studentCount == 0 ? (createStGroupGroup.classList.add('disabled'), createStGroupGroup.disabled = true) : null
             reportCountGroup.textContent = `تا کنون ${persainArray[globalStudentSelectCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
@@ -281,10 +282,6 @@ selectsGroup.addEventListener('click', (e) => {
             studentNamesInDropDown = studentNamesInDropDown.filter(function (f) { return f !== item })
         })
         studentCount = studentNamesInListGroup.length
-        // iEye.addEventListener('click', e => {
-        //     e.preventDefault()
-        //     console.log(this.key)
-        // })
     })
 
     var stLevelGroup = document.getElementsByName('st-name-group');
@@ -298,5 +295,55 @@ selectsGroup.addEventListener('click', (e) => {
 
 
 function eyeClicked(x) {
-    console.log(x.key + "OOOOOOOOOO")
+    seeModal.innerHTML = ''
+    var str = '';
+    var studentCount = null;
+    var eyeArray = []
+
+    str = studentGroupObjArray[x.name].studentArray;
+    eyeArray = str.length > 0 ? str.split(',') : []
+    studentCount = eyeArray.length
+    reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
+
+    let div = document.createElement('div')
+
+    eyeArray.forEach((item) => {
+        let icon = document.createElement('i')
+        let li = document.createElement('li')
+
+        li.innerText = item;
+        li.classList.add('list-group-item', 'pe-4', 'd-flex', 'flex-row', 'justify-content-between');
+        icon.classList.add('fa', 'fa-trash', 'text-dark', 'fs-5');
+        icon.name = item
+        li.appendChild(icon);
+        div.appendChild(li)
+
+        icon.addEventListener('click', (e) => {
+            e.preventDefault()
+            var name = icon.name
+            eyeArray.splice(name, 1)
+            icon.parentNode.parentNode.removeChild(icon.parentNode);
+            if (str.includes("," + name)) {
+                studentGroupObjArray[x.name].studentArray = studentGroupObjArray[x.name].studentArray.replace("," + name, '')
+            } else if (str.includes(name)) {//last name in array
+                studentGroupObjArray[x.name].studentArray = '';
+                console.log(studentGroupObjArray[x.name].studentArray + " : string")
+                eyeArray = []
+            }
+
+            studentCount = eyeArray.length
+            reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
+        })
+    })
+    seeModal.appendChild(div);
+    reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
+}
+
+function linkIconAndKeyValue(value, arr) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i].value === value) {
+            return arr[i].key
+        }
+    }
+    return -1
 }
