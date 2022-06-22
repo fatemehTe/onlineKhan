@@ -1,4 +1,5 @@
 var globalStudentSelectCount = 0;
+var globalStudentGroupCount = 0;
 // The array of student names in first tabs list
 var studentNamesInList = [];
 // The array of studentGroups names in second tabs list
@@ -121,11 +122,6 @@ selects.addEventListener('click', (e) => {
     persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
     reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
     dropdownMenuLinkname.textContent = 'انتخاب کنید'
-
-    for (i = 0; i < studentGroupObjArray.length; i++) {
-        console.log("n*: " + studentGroupObjArray[i].groupName)
-        console.log("s*: " + studentGroupObjArray[i].studentArray)
-    }
 
 })
 createStGroup.addEventListener('click', e => {
@@ -297,7 +293,7 @@ selectsGroup.addEventListener('click', (e) => {
 function eyeClicked(x) {
     seeModal.innerHTML = ''
     var str = '';
-    var studentCount = null;
+    var studentCount = 0;
     var eyeArray = []
 
     str = studentGroupObjArray[x.name].studentArray;
@@ -321,16 +317,18 @@ function eyeClicked(x) {
         icon.addEventListener('click', (e) => {
             e.preventDefault()
             var name = icon.name
-            eyeArray.splice(name, 1)
             icon.parentNode.parentNode.removeChild(icon.parentNode);
-            if (str.includes("," + name)) {
-                studentGroupObjArray[x.name].studentArray = studentGroupObjArray[x.name].studentArray.replace("," + name, '')
-            } else if (str.includes(name)) {//last name in array
-                studentGroupObjArray[x.name].studentArray = '';
-                console.log(studentGroupObjArray[x.name].studentArray + " : string")
+            str = str.replace(',', ' ')
+
+            if (!str.replace(/\s/g, '').length) {
+                studentGroupObjArray[x.name].studentArray = ''
                 eyeArray = []
             }
-
+            if (str.includes(name)) {
+                studentGroupObjArray[x.name].studentArray =
+                    studentGroupObjArray[x.name].studentArray.replace((studentGroupObjArray[x.name].studentArray.includes(",") ? "," + name : name), '')
+            }
+            eyeArray.splice(name, 1)
             studentCount = eyeArray.length
             reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
         })
