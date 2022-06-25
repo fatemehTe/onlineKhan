@@ -46,40 +46,48 @@ var finalConfirmButton = document.getElementById("finalConfirmButton")
 
 
 
+
 function addLevel(x) {
     var str = dropdownMenuLink.innerText;
-    var clear;
-    str == 'انتخاب کنید' ? clear = true : clear = false
+    str == 'انتخاب کنید' ? str = '' : null
     if (x.checked) {
-        clear ? str = '' : str = str + ', '
-        str += x.value
+        str += ', ' + x.value
     } else {
-        var comma = str.indexOf(',') > -1;
-        str = str.includes(', ' + x.value) ?
-            str.replace(', ' + x.value, '') :
-            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
-        if (!comma) str = 'انتخاب کنید';
+        str.includes(', ' + x.value + ',') ?//vasate string
+            str = str.replace(', ' + x.value + ',', ',') :
+            str.endsWith(', ' + x.value) ?//akhar e string
+                str = str.substring(0, str.length - x.value.length - 2) :
+                str.startsWith(x.value + ',') ?//aval e string
+                    str = str.substring(x.value.length, str.length) :
+                    str == x.value ?//tanha dar string
+                        str = 'انتخاب کنید' :
+                        null
+
     }
+    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
     dropdownMenuLink.textContent = str
 }
 
 function addName(x) {
     var str = dropdownMenuLinkname.innerText;
-    var clear;
-    str == 'انتخاب کنید' ? clear = true : clear = false
+    str == 'انتخاب کنید' ? str = '' : null
     if (x.checked) {
-        clear ? str = '' : str = str + ', '
-        str += x.value
+        str += ', ' + x.value
     } else {
-        var comma = str.indexOf(',') > -1;
-        str = str.includes(', ' + x.value) ?
-            str.replace(', ' + x.value, '') :
-            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
-        if (!comma) str = 'انتخاب کنید';
+        str.includes(', ' + x.value + ',') ?//vasate string
+            str = str.replace(', ' + x.value + ',', ',') :
+            str.endsWith(', ' + x.value) ?//akhar e string
+                str = str.substring(0, str.length - x.value.length - 2) :
+                str.startsWith(x.value + ',') ?//aval e string
+                    str = str.substring(x.value.length, str.length) :
+                    str == x.value ?//tanha dar string
+                        str = 'انتخاب کنید' :
+                        null
+
     }
+    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
     dropdownMenuLinkname.textContent = str
 }
-
 selects.addEventListener('click', (e) => {
     e.preventDefault();
     var studentCount = 0;
@@ -193,21 +201,24 @@ function makeStudentGroupList() {
     })
 
 }
-
 function addLevelGroup(x) {
     var str = dropdownMenuLinkGroup.innerText;
-    var clear;
-    str == 'انتخاب کنید' ? clear = true : clear = false
+    str == 'انتخاب کنید' ? str = '' : null
     if (x.checked) {
-        clear ? str = '' : str = str + ', '
-        str += x.value
+        str += ', ' + x.value
     } else {
-        var comma = str.indexOf(',') > -1;
-        str = str.includes(', ' + x.value) ?
-            str.replace(', ' + x.value, '') :
-            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
-        if (!comma) str = 'انتخاب کنید';
+        str.includes(', ' + x.value + ',') ?//vasate string
+            str = str.replace(', ' + x.value + ',', ',') :
+            str.endsWith(', ' + x.value) ?//akhar e string
+                str = str.substring(0, str.length - x.value.length - 2) :
+                str.startsWith(x.value + ',') ?//aval e string
+                    str = str.substring(x.value.length, str.length) :
+                    str == x.value ?//tanha dar string
+                        str = 'انتخاب کنید' :
+                        null
+
     }
+    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
     dropdownMenuLinkGroup.textContent = str
 }
 
@@ -231,16 +242,21 @@ function addNameGroup(x) {
         keyValue.value = x.value
         keyValueArray.push(keyValue)
     } else {
-        var comma = str.indexOf(',') > -1;
-        str = str.includes(', ' + x.value) ?
-            str.replace(', ' + x.value, '') :
-            str.includes(x.value) ? str.replace(x.value + ', ', '') : null
-        if (!comma) str = 'انتخاب کنید';
-        keyValue = keyValue.filter(function (f) { return f !== x.value })
-
+        str.includes(', ' + x.value + ',') ?//vasate string
+            str = str.replace(', ' + x.value + ',', ',') :
+            str.endsWith(', ' + x.value) ?//akhar e string
+                str = str.substring(0, str.length - x.value.length - 2) :
+                str.startsWith(x.value + ',') ?//aval e string
+                    str = str.substring(x.value.length, str.length) :
+                    str == x.value ?//tanha dar string
+                        str = 'انتخاب کنید' :
+                        null
+        keyValueArray = keyValueArray.filter(function (f) { return f !== x.value })
     }
+    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
     dropdownMenuLinknameGroup.textContent = str
 }
+
 
 selectsGroup.addEventListener('click', (e) => {
     e.preventDefault();
@@ -368,24 +384,11 @@ function eyeClicked(x) {
             e.preventDefault()
             var name = icon.name
             icon.parentNode.parentNode.removeChild(icon.parentNode);
-            str = str.replace(',', ' ')
 
-
-            if (str.includes(name)) {
-                studentGroupObjArray[x.name].studentArray =
-                    studentGroupObjArray[x.name].studentArray.replace((studentGroupObjArray[x.name].studentArray.includes(",") ? "," + name : name), '')
-            }
-            // if (!str.replace(/\s/g, '').length) {
-            // let array = str.split('')
-            // let onlySpace = true
-            // array.forEach((item) => {
-            //     if (item !== ' ') {
-            //         onlySpace = false
-            //     }
-            // })
-            // onlySpace ? studentGroupObjArray[x.name].studentArray = null : null
-            // }
             eyeArray = eyeArray.filter(function (f) { return f !== name })
+            if (str.includes(name)) {
+                studentGroupObjArray[x.name].studentArray = eyeArray.toString()
+            }
             studentCount = eyeArray.length
             updatestudentArayList(studentCount)
 
@@ -405,16 +408,25 @@ function linkIconAndKeyValue(value, arr) {
 }
 
 function updateNameList(studentCount, stLevel) {
-    reportCount.textContent = `تا کنون انتخاب ${persainArray[studentCount]} دانش آموز از ${persainArray[stLevel.length]} دانش آموز`
+    reportCount.textContent = `تا کنون انتخاب ${makePersian(studentCount)} دانش آموز از ${makePersian(stLevel.length)} دانش آموز`
     dropdownMenuLinkname.textContent = 'انتخاب کنید'
 }
 function updateGroupList() {
     let studentCount = studentGroupObjArrayInList.length
     let totalstudentCount = calcTotalStCount()
-    reportCountGroup.textContent = `تا کنون ${persainArray[totalstudentCount]} دانش آموز و ${persainArray[studentCount]} گروه انتخاب شده اند`
+    reportCountGroup.textContent = `تا کنون ${makePersian(totalstudentCount)} دانش آموز و ${makePersian(studentCount)} گروه انتخاب شده اند`
 
 }
 function updatestudentArayList(studentCount) {
-    reportCountStudent.innerText = `${persainArray[studentCount]} دانش آموز در این گروه وجود دارند`
+    reportCountStudent.innerText = `${makePersian(studentCount)} دانش آموز در این گروه وجود دارند`
     updateGroupList()
+}
+
+function makePersian(number) {
+    let array = number.toString().split('')
+    let str = ''
+    array.forEach((item) => {
+        str += persainArray[item]
+    })
+    return str
 }
