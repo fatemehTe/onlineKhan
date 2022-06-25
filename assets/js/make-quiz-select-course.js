@@ -86,16 +86,16 @@ function addLevel(x) {
     if (x.checked) {
         keyValue.key = x.id;
         keyValue.value = x.value
-        !str.includes(x.value) ?
+        !levelArray.includes(x.value) ?
             levelArray.push(keyValue) : null
         updateLevelString()
     } else {
-        let keyToDelete = 0;
         levelArray = levelArray.filter(function (f) {
-            keyToDelete = x.id
-            return f.value !== x.value
+            return f.key !== x.id
         })
-        lessonArray = lessonArray.filter(function (f) { return f.key !== keyToDelete })
+        lessonArray = lessonArray.filter(function (f) {
+            return f.parentKey !== x.id
+        })
         updateLevelString()
         updateLessonString()
     }
@@ -119,21 +119,20 @@ function addLesson() {
     for (i = 0; i < levelArray.length; i++) {
         for (j = 0; j < lessonNames.length; j++) {
             if (lessonNames[j].levelNameId == levelArray[i].key) {
-                let keyValue = { key: 0, value: '' }
+                let keyValue = { key: 0, value: '', parentKey: 0 }
                 keyValue.key = lessonNames[j].id
                 keyValue.value = lessonNames[j].name
+                keyValue.parentKey = lessonNames[j].levelNameId
                 lessonBasedOnLevel.push(keyValue)
             }
         }
     }
-
 }
 function makeLesson() {
     lessonNameID.innerHTML = ''
     lessonBasedOnLevel.length > 0 ?
         lessonBasedOnLevel.forEach((item) => {
-            console.log(item.value)
-            console.log(item.key)
+
             let div = document.createElement('div')
             let input = document.createElement('input')
             let label = document.createElement('label')
@@ -148,6 +147,8 @@ function makeLesson() {
 
             input.value = item.value
             input.id = item.key
+
+            input.alt = item.parentKey
             label.innerText = item.value
             div.appendChild(input)
             div.appendChild(label)
@@ -158,10 +159,11 @@ function makeLesson() {
 function addName(x) {
     var str = dropdownMenuLinkname.innerText;
     str == 'انتخاب کنید' ? str = '' : null
-    let keyValue = { key: 0, value: '' }
+    let keyValue = { key: 0, value: '', parentKey: 0 }
     if (x.checked) {
         keyValue.key = x.id;
-        keyValue.value = x.value
+        keyValue.value = x.value;
+        keyValue.parentKey = x.alt
         !str.includes(x.value) ?
             lessonArray.push(keyValue) : null
         updateLessonString()
@@ -186,8 +188,8 @@ function updateLessonString() {
 
 function questionCountCalc() {
     let count = 0
-    for (i = 0; i < questions.lengthl; i++) {
-        for (j = 0; j < levelArray.length; j++) {
+    for (i = 0; i < questions.length; i++) {
+        for (j = 0; j < lessonArray.length; j++) {
             if (lessonArray[j].key === questions[i].lessonNameId) {
                 count += questions[i].questions.length
             }
