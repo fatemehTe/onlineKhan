@@ -11,6 +11,37 @@ var studentGroupObjArrayInList = []
 var keyValueArray = []
 //to convert
 persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+//lesson question key value array
+var lessonBasedOnLevel = []
+//level array
+var levelArray = []
+
+levelNames = [{ name: 'اول دبیرستان', id: 1 }, { name: 'دوم دبیرستان', id: 2 }, { name: 'سوم دبیرستان', id: 3 }]
+lessonNames = [
+    { name: 'ریاضی ۱', id: 1, levelNameId: 1 },
+    { name: 'ریاضی ۲', id: 2, levelNameId: 2 },
+    { name: 'ریاضی ۳', id: 3, levelNameId: 3 },
+    { name: 'فیزیک ۱', id: 4, levelNameId: 1 },
+    { name: 'فیزیک ۲', id: 5, levelNameId: 2 },
+    { name: 'فیزیک ۳', id: 6, levelNameId: 3 },
+    { name: 'زیست ۱', id: 7, levelNameId: 1 },
+    { name: 'زیست ۲', id: 8, levelNameId: 2 },
+    { name: 'زیست ۳', id: 9, levelNameId: 3 },
+]
+questions = [
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 1, lessonNameId: 1 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 2, lessonNameId: 2 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 3, lessonNameId: 3 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 4, lessonNameId: 4 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 5, lessonNameId: 5 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 6, lessonNameId: 6 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 7, lessonNameId: 7 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 8, lessonNameId: 8 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 9, lessonNameId: 9 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 10, lessonNameId: 1 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 11, lessonNameId: 2 },
+    { questions: [{ name: 'Q1' }, { name: 'Q2' }, { name: 'Q3' }], id: 12, lessonNameId: 3 },
+]
 
 var stLevel = document.getElementsByName('lv-name');
 const dropdownMenuLink = document.getElementById("dropdownMenuLink")
@@ -20,52 +51,94 @@ var list = document.getElementById("list-group")
 var studentList = document.getElementById("student-list")
 var reportCount = document.getElementById("report-count")
 var stNames = document.getElementsByName("st-name")
-var createStGroup = document.getElementById("create-st-group")
-var createStGroupInput = document.getElementById("create-st-group-input")
-var submitGroup = document.getElementById("submit-group")
+var levelNameID = document.getElementById("level-name")
+var lessonNameID = document.getElementById("lesson-name")
 
-// for second tab
-var stLevelGroup = document.getElementsByName('lv-name-group');
-var stNamesGroup = document.getElementsByName("st-name-group")
-const dropdownMenuLinkGroup = document.getElementById("dropdownMenuLink-group")
-const dropdownMenuLinknameGroup = document.getElementById("dropdownMenuLinkname-group")
-const selectsGroup = document.getElementById("selects-group")
-var listGroup = document.getElementById("list-group-group")
-var studentListGroup = document.getElementById("student-list-group")
-var reportCountGroup = document.getElementById("report-count-group")
-var createStGroupGroup = document.getElementById("create-st-group-group")
-var submitGroupGroup = document.getElementById("submit-group-group")
-var parent = document.getElementById("ulMenueLinkname-group")
-var childDiv = document.getElementById("ulMenueLinkname-group-overflow")
-var seeModal = document.getElementById("seeModal")
-var reportCountStudent = document.getElementById("report-count-student")
-var studentGroupConfirmData = document.getElementById("studentGroupConfirmData")
-var studentGroupConfirmDataParent = document.getElementById("studentGroupConfirmDataParent")
-var finalConfirmButton = document.getElementById("finalConfirmButton")
+window.onload =
+    function makeLevel() {
 
+        levelNames.forEach((item) => {
+            let div = document.createElement('div')
+            let input = document.createElement('input')
+            let label = document.createElement('label')
 
+            div.classList.add('d-flex', 'flex-row', 'justify-content-start', 'align-items-center')
+            input.classList.add('mx-1', 'my-1')
+            input.type = "checkbox"
+            input.name = "lv-name"
+            input.setAttribute('onclick', 'addLevel(this)')
+            label.for = "lv-name"
+            label.classList.add("font-14")
 
-
-
-function addLevel(x) {
-    var str = dropdownMenuLink.innerText;
-    str == 'انتخاب کنید' ? str = '' : null
-    if (x.checked) {
-        str += ', ' + x.value
-    } else {
-        str.includes(', ' + x.value + ',') ?//vasate string
-            str = str.replace(', ' + x.value + ',', ',') :
-            str.endsWith(', ' + x.value) ?//akhar e string
-                str = str.substring(0, str.length - x.value.length - 2) :
-                str.startsWith(x.value + ',') ?//aval e string
-                    str = str.substring(x.value.length, str.length) :
-                    str == x.value ?//tanha dar string
-                        str = 'انتخاب کنید' :
-                        null
+            input.value = item.name
+            input.id = item.id
+            label.innerText = item.name
+            div.appendChild(input)
+            div.appendChild(label)
+            levelNameID.appendChild(div)
+        })
 
     }
-    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
+function addLevel(x) {
+    var str = dropdownMenuLink.innerText;
+    let temp = []
+    str == 'انتخاب کنید' ? str = '' : null
+    let keyValue = { key: 0, value: '' }
+    if (x.checked) {
+        keyValue.key = x.id;
+        keyValue.value = x.value
+        levelArray.push(keyValue)
+    } else {
+        levelArray = levelArray.filter(function (f) { return f.value !== x.value })
+    }
+    levelArray.forEach((item) => {
+        temp.push(item.value)
+    })
+    temp.length === 0 ? str = 'انتخاب کنید' :
+        str = temp.toString()
     dropdownMenuLink.textContent = str
+    addLesson()
+    makeLesson()
+}
+function addLesson() {
+    lessonBasedOnLevel = []
+    for (i = 0; i < levelArray.length; i++) {
+        for (j = 0; j < lessonNames.length; j++) {
+            if (lessonNames[j].levelNameId == levelArray[i].key) {
+                let keyValue = { key: 0, value: '' }
+                keyValue.key = lessonNames[j].id
+                keyValue.value = lessonNames[j].name
+                lessonBasedOnLevel.push(keyValue)
+            }
+        }
+    }
+
+}
+function makeLesson() {
+    lessonNameID.innerHTML = ''
+    lessonBasedOnLevel.length > 0 ?
+        lessonBasedOnLevel.forEach((item) => {
+            console.log(item.value)
+            console.log(item.key)
+            let div = document.createElement('div')
+            let input = document.createElement('input')
+            let label = document.createElement('label')
+
+            div.classList.add('d-flex', 'flex-row', 'justify-content-start', 'align-items-center')
+            input.classList.add('mx-1', 'my-1')
+            input.type = "checkbox"
+            input.name = "st-name"
+            input.setAttribute('onclick', 'addName(this)')
+            label.for = "st-name"
+            label.classList.add("font-14")
+
+            input.value = item.value
+            input.id = item.key
+            label.innerText = item.value
+            div.appendChild(input)
+            div.appendChild(label)
+            lessonNameID.appendChild(div)
+        }) : null
 }
 
 function addName(x) {
