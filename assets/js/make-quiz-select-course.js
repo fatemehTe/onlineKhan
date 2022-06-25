@@ -173,6 +173,68 @@ function addName(x) {
         updateLessonString()
     }
     updateLessonString()
+    finalConfirmButton.addEventListener('click', e => {
+        let lessonArr = []
+        let levelArr = []
+
+        let lessonPic;
+        let levelPic;
+        let verbPic;
+
+        let lesson = 'درس'
+        let lessons = 'دروس'
+        let verb = 'با موفقیت انتخاب شد.'
+
+        let level = 'مقطع'
+        let levels = 'مقاطع'
+        let verbs = 'با موفقیت انتخاب شدند.'
+
+        lessonArray.length > 1 ?
+            lessonPic = lessons : lessonPic = lesson
+
+        levelArray.length > 1 ?
+            lessonPic = "از " + levels : levelPic = "از " + level
+
+        lessonPic === 'درس' ? verbPic = verb : verbPic = verbs
+
+        e.preventDefault()
+
+        let divUP = document.createElement('div')
+        divUP.innerText = lessonPic
+        let divDown = document.createElement('div')
+        divDown.innerText = levelPic
+        let divDowner = document.createElement('div')
+        divDowner.innerText = verbPic
+
+        let div = document.createElement('div')
+        div.classList.add('w-100', 'c-06a971')
+        let div2 = document.createElement('div')
+        div2.classList.add('w-100', 'c-06a971')
+
+        studentGroupConfirmDataParent.innerHTML = ''
+
+
+        let lessonStr = ''
+        lessonArray.forEach((e => {
+            lessonArr.push(e.value)
+        }))
+        lessonStr = lessonArr.toString()
+
+        let levelStr = ''
+        levelArray.forEach((e => {
+            levelArr.push(e.value)
+        }))
+        levelStr = levelArr.toString()
+
+        div.textContent = lessonStr
+        div2.textContent = levelStr
+
+        studentGroupConfirmDataParent.appendChild(divUP)
+        studentGroupConfirmDataParent.appendChild(div)
+        studentGroupConfirmDataParent.appendChild(divDown)
+        studentGroupConfirmDataParent.appendChild(div2)
+        studentGroupConfirmDataParent.appendChild(divDowner)
+    })
 }
 
 function updateLessonString() {
@@ -281,29 +343,7 @@ function makeStudentGroupList() {
         div.appendChild(label)
         childDiv.appendChild(div)
     }
-    finalConfirmButton.addEventListener('click', e => {
-        e.preventDefault()
-        let ul = document.createElement('ul')
-        ul.classList.add('list-group', 'overflow-hidden', 'pe-0')
-        let divUP = document.createElement('div')
-        divUP.innerText = 'گروه های دانش آموزی:'
-        let divDown = document.createElement('div')
-        divDown.innerText = 'برای این آزمون, با موفقیت انتخاب شدند.'
-        let div = document.createElement('div')
-        div.classList.add('w-100', 'c-06a971')
 
-        studentGroupConfirmDataParent.innerHTML = ''
-        studentGroupConfirmDataParent.appendChild(divUP)
-        ul.appendChild(div)
-
-        studentGroupObjArray.forEach((item) => {
-            let li = document.createElement('li')
-            li.innerText = item.groupName
-            div.appendChild(li)
-        })
-        studentGroupConfirmDataParent.appendChild(div)
-        studentGroupConfirmDataParent.appendChild(divDown)
-    })
 
 }
 function addLevelGroup(x) {
