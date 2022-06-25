@@ -86,17 +86,20 @@ function addLevel(x) {
     if (x.checked) {
         keyValue.key = x.id;
         keyValue.value = x.value
-        levelArray.push(keyValue)
+        !str.includes(x.value) ?
+            levelArray.push(keyValue) : null
         updateLevelString()
     } else {
         let keyToDelete = 0;
         levelArray = levelArray.filter(function (f) {
-            keyToDelete = f.key
+            keyToDelete = x.id
             return f.value !== x.value
         })
         lessonArray = lessonArray.filter(function (f) { return f.key !== keyToDelete })
         updateLevelString()
+        updateLessonString()
     }
+    updateLevelString()
 }
 
 function updateLevelString() {
@@ -154,25 +157,33 @@ function makeLesson() {
 
 function addName(x) {
     var str = dropdownMenuLinkname.innerText;
-    let temp = []
     str == 'انتخاب کنید' ? str = '' : null
     let keyValue = { key: 0, value: '' }
     if (x.checked) {
         keyValue.key = x.id;
         keyValue.value = x.value
-        lessonArray.push(keyValue)
-        reportCount.innerText = ` سوال انتخاب شده اند. ${makePersian(questionCountCalc())} درس و${makePersian(lessonArray.length)} تاکنون `
+        !str.includes(x.value) ?
+            lessonArray.push(keyValue) : null
+        updateLessonString()
+
     } else {
         lessonArray = lessonArray.filter(function (f) { return f.value !== x.value })
-        reportCount.innerText = ` سوال انتخاب شده اند. ${makePersian(questionCountCalc())} درس و${makePersian(lessonArray.length)} تاکنون `
+        updateLessonString()
     }
+    updateLessonString()
+}
+
+function updateLessonString() {
+    let temp = []
     lessonArray.forEach((item) => {
         temp.push(item.value)
     })
+    reportCount.innerText = ` سوال انتخاب شده اند. ${makePersian(questionCountCalc())} درس و${makePersian(lessonArray.length)} تاکنون `
     temp.length === 0 ? str = 'انتخاب کنید' :
         str = temp.toString()
     dropdownMenuLinkname.textContent = str
 }
+
 function questionCountCalc() {
     let count = 0
     for (i = 0; i < questions.lengthl; i++) {
