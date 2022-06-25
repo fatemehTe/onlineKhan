@@ -9,12 +9,12 @@ var studentGroupObjArray = [];
 var studentGroupObjArrayInList = []
 //key value for the index of the student group we choose
 var keyValueArray = []
-//to convert
-persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 //lesson question key value array
 var lessonBasedOnLevel = []
 //level array
 var levelArray = []
+//lesson array
+var lessonArray = []
 
 levelNames = [{ name: 'اول دبیرستان', id: 1 }, { name: 'دوم دبیرستان', id: 2 }, { name: 'سوم دبیرستان', id: 3 }]
 lessonNames = [
@@ -81,16 +81,26 @@ window.onload =
     }
 function addLevel(x) {
     var str = dropdownMenuLink.innerText;
-    let temp = []
     str == 'انتخاب کنید' ? str = '' : null
     let keyValue = { key: 0, value: '' }
     if (x.checked) {
         keyValue.key = x.id;
         keyValue.value = x.value
         levelArray.push(keyValue)
+        updateLevelString()
     } else {
-        levelArray = levelArray.filter(function (f) { return f.value !== x.value })
+        let keyToDelete = 0;
+        levelArray = levelArray.filter(function (f) {
+            keyToDelete = f.key
+            return f.value !== x.value
+        })
+        lessonArray = lessonArray.filter(function (f) { return f.key !== keyToDelete })
+        updateLevelString()
     }
+}
+
+function updateLevelString() {
+    let temp = []
     levelArray.forEach((item) => {
         temp.push(item.value)
     })
@@ -100,6 +110,7 @@ function addLevel(x) {
     addLesson()
     makeLesson()
 }
+
 function addLesson() {
     lessonBasedOnLevel = []
     for (i = 0; i < levelArray.length; i++) {
@@ -143,23 +154,35 @@ function makeLesson() {
 
 function addName(x) {
     var str = dropdownMenuLinkname.innerText;
+    let temp = []
     str == 'انتخاب کنید' ? str = '' : null
+    let keyValue = { key: 0, value: '' }
     if (x.checked) {
-        str += ', ' + x.value
+        keyValue.key = x.id;
+        keyValue.value = x.value
+        lessonArray.push(keyValue)
+        reportCount.innerText = ` سوال انتخاب شده اند. ${makePersian(questionCountCalc())} درس و${makePersian(lessonArray.length)} تاکنون `
     } else {
-        str.includes(', ' + x.value + ',') ?//vasate string
-            str = str.replace(', ' + x.value + ',', ',') :
-            str.endsWith(', ' + x.value) ?//akhar e string
-                str = str.substring(0, str.length - x.value.length - 2) :
-                str.startsWith(x.value + ',') ?//aval e string
-                    str = str.substring(x.value.length, str.length) :
-                    str == x.value ?//tanha dar string
-                        str = 'انتخاب کنید' :
-                        null
-
+        lessonArray = lessonArray.filter(function (f) { return f.value !== x.value })
+        reportCount.innerText = ` سوال انتخاب شده اند. ${makePersian(questionCountCalc())} درس و${makePersian(lessonArray.length)} تاکنون `
     }
-    str.substring(0, 2) === ', ' ? str = str.substring(2, str.length) : null
+    lessonArray.forEach((item) => {
+        temp.push(item.value)
+    })
+    temp.length === 0 ? str = 'انتخاب کنید' :
+        str = temp.toString()
     dropdownMenuLinkname.textContent = str
+}
+function questionCountCalc() {
+    let count = 0
+    for (i = 0; i < questions.lengthl; i++) {
+        for (j = 0; j < levelArray.length; j++) {
+            if (lessonArray[j].key === questions[i].lessonNameId) {
+                count += questions[i].questions.length
+            }
+        }
+    }
+    return count
 }
 selects.addEventListener('click', (e) => {
     e.preventDefault();

@@ -10,7 +10,7 @@ var studentGroupObjArrayInList = []
 //key value for the index of the student group we choose
 var keyValueArray = []
 //to convert
-persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
 
 var stLevel = document.getElementsByName('lv-name');
 const dropdownMenuLink = document.getElementById("dropdownMenuLink")
@@ -422,11 +422,3 @@ function updatestudentArayList(studentCount) {
     updateGroupList()
 }
 
-function makePersian(number) {
-    let array = number.toString().split('')
-    let str = ''
-    array.forEach((item) => {
-        str += persainArray[item]
-    })
-    return str
-}

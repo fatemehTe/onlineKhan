@@ -57,16 +57,16 @@ document.addEventListener("click", (e) => {
 });
 
 //step2.addEventListener("click", (e) => {
- //   e.stopPropagation();
+//   e.stopPropagation();
 
 //    if (!step2_menu.classList.contains('is-active')) {
 //        step2_menu.classList.add('is-active');
 //    } else {
 //        step2_menu.classList.remove('is-active');
- //   }
+//   }
 ////});
 
-kebab.addEventListener('click', (e) =>  {
+kebab.addEventListener('click', (e) => {
     e.stopPropagation();
 
     if (!middle.classList.contains('active') && !cross.classList.contains('active') && !dropdown.classList.contains('active')) {
@@ -222,3 +222,14 @@ if (sidebar_links.scrollHeight - (sidebar_links.scrollTop + sidebar_links.client
 } else {
     jump_down.style = 'display: none !important';
 }
+//fateme tekrar
+persainArray = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+function makePersian(number) {
+    let array = number.toString().split('')
+    let str = ''
+    array.forEach((item) => {
+        str += persainArray[item]
+    })
+    return str
+}
+//fateme tekrar
