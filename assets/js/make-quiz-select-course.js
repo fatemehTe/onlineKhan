@@ -188,13 +188,9 @@ function updateLessonString() {
 
 function questionCountCalc() {
     let count = 0
-    for (i = 0; i < questions.length; i++) {
-        for (j = 0; j < lessonArray.length; j++) {
-            if (lessonArray[j].key === questions[i].lessonNameId) {
-                count += questions[i].questions.length
-            }
-        }
-    }
+    lessonArray.forEach((elem) => {
+        count += questions[elem.key].questions.length
+    })
     return count
 }
 selects.addEventListener('click', (e) => {
