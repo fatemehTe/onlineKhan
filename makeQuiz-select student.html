@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+  <!--*****************************************************-->
+  <!-- این متا ها لازمه که برای سئو روی سایت گذاشته بشن -->
+  <!--*****************************************************-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Language" content="fa">
+  <!-- ************************************************ -->
+  <title>آنلاین خوان</title>
+  <!-- ************************************************ -->
+  <!-- این متا ها لازمه که برای سئو روی سایت گذاشته بشن -->
+  <meta name="language" content="Farsi" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="آزمون,برگزاری آزمون,آزمون آنلاین,آنلاین خوان" />
+  <meta name="keywords" content="All keyword phrases,associated with this page,onlinekhan,آنلاین خوان" />
+  <meta name="classification" content="online education,quiz,online test" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="google-site-verification" content="UniqueProprietaryCode4Site" />
+  <meta name="robots" content="index, follow" />
+  <meta name="creator" content="onlinekhan,آنلاین خوان" />
+  <meta name="publisher" content="onlinekhan,آنلاین خوان" />
+  <!-- ************************************************ -->
+  <!-- فا آیکن سایت -->
+  <link type="images/ico" href="assets/img/quasar-logo.png" rel="icon" />
+  <link rel="apple-touch-icon" href="assets/img/quasar-logo.pn">
+  <!--*****************************************************-->
+  <!-- پیوند به فایل های استایل شیت و اسکریپت -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/makeQuiz.css" rel="stylesheet">
+  <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
+  <!--*****************************************************-->
+  <!--*****************************************************-->
+</head>
+
+
+<body class="shrink">
+
+  <!--fateme tekrar-popupQuestion-start-->
+  <div class="popUpPage" id="popUp-page">
+    <img src="./assets/img/close.png" class="popUp-img" id="popUpImg">
+    <form>
+      <span class="popUp-span" style="position: relative;">:نام
+      </span>
+      <input type="text" class="popUp-input form-control" />
+      <span class="popUp-span">:پست الکترونیک</span>
+      <input type="text" class="popUp-input form-control" />
+      <span class="popUp-span">:پیام</span>
+      <textarea type="text" class="popUp-input form-control"></textarea>
+      <div class="popUp-btn-div">
+        <button class="btn btn-success d-flex align-items-center popUp-btn">ارسال</button>
+      </div>
+    </form>
+  </div>
+  <!--fateme tekrar-popupQuestion-end-->
+  <!-- شروع منوی ثابت سمت راست -->
+
+  <nav class="c-nav overflow-hidden">
+    <div class="sidebar-top">
+      <span class="shrink-btn border-bottom border-2">
+        <span class="link hide fs-5 ">پنل دانش آموزی</span>
+        <div class="icon">
+          <img src="./assets/img/ecollapse-menu-icon.png">
+        </div>
+      </span>
+    </div>
+
+    <span id="jump-top" class="jump-top border-bottom jump d-none justify-content-center">
+      <i class="fa-solid fa-angle-up"></i>
+    </span>
+
+    <div id="sidebar-links" class="sidebar-links">
+      <ul>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-circle-user"></i>
+              <span class="c-tooltip-text">پروفایل</span>
+            </div>
+            <div class="d-flex flex-column text-end align-items-end">
+              <span class="link hide">ابوالفضل ابراهیمی</span>
+              <span class="link hide child-link">دانش آموز</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-light fa-bell position-relative">
+                <span class="badge bg-danger position-absolute iran-sans  font-10">4</span>
+              </i>
+              <span class="c-tooltip-text">اعلان ها</span>
+            </div>
+            <span class="link hide font-12">اعلان ها</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-book"></i>
+              <span class="c-tooltip-text">درس</span>
+            </div>
+            <span class="link hide font-12">درس</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-boxes-packing"></i>
+              <span class="c-tooltip-text">پکیج دروس</span>
+            </div>
+            <span class="link hide">پکیج دروس</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-regular fa-file-invoice"></i>
+              <span class="c-tooltip-text">تکلیف</span>
+            </div>
+            <span class="link hide">تکلیف</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-envelope-open-text"></i>
+              <span class="c-tooltip-text">آزمون</span>
+            </div>
+            <span class="link hide">آزمون</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="c-tooltip-text">دبیر</span>
+            </div>
+            <span class="link hide">دبیر</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-regular fa-photo-film-music"></i>
+              <span class="c-tooltip-text">رسانه</span>
+            </div>
+            <span class="link hide">رسانه</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-calendar-lines-pen"></i>
+              <span class="c-tooltip-text">برنامه هفتگی</span>
+            </div>
+            <span class="link hide">برنامه هفتگی</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-envelope-open-dollar"></i>
+              <span class="c-tooltip-text">پرداخت ها</span>
+            </div>
+            <span class="link hide">پرداخت ها</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-wallet"></i>
+              <span class="c-tooltip-text">کیف پول</span>
+            </div>
+            <span class="link hide">کیف پول</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon c-tooltip">
+              <i class="fa-solid fa-headset"></i>
+              <span class="c-tooltip-text">مشاور</span>
+            </div>
+            <span class="link hide">مشاور</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <span id="jump-down" class="jump-down border-top jump d-none justify-content-center">
+      <i class="fa-solid fa-angle-down"></i>
+    </span>
+
+    <div class="sidebar-footer d-flex">
+      <a href="#" class="log-out">
+        <i class="fa-solid fa-power-off"></i>
+      </a>
+
+      <span class="shrink-btn shrink-mobile-hide-btn d-none">
+        <div class="icon">
+          <img src="./assets/img/ecollapse-menu-icon.png">
+        </div>
+      </span>
+    </div>
+  </nav>
+  <!-- پایان منوی ثابت سمت راست -->
+  <!--fateme tekrar-only surround the div with main-->
+  <div id="main">
+    <!--fateme tekrar-maindiv(for blur)-->
+    <!-- منوی بالا هدر اول -->
+    <nav class="container-nav-top px-3 px-lg-4 border-bottom border-2">
+      <div class="nav-top d-flex flex-wrap align-items-center h-100">
+
+        <div class="container-bars d-none header-font-color fs-1">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav me-auto container-menu">
+          <li class="nav-item pe-2"><a href="#"
+              class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">تماس با ما</a></li>
+          <li class="nav-item pe-2"><a href="#"
+              class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">درباره ما</a></li>
+          <li class="nav-item pe-2"><a href="#"
+              class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">مشاوره تحصیلی</a></li>
+          <li class="nav-item pe-2"><a href="#"
+              class="nav-link link-dark px-2 header-font-color font-12 menu-item-hover">خرید پکیچ درسی</a></li>
+        </ul>
+
+        <ul class="nav">
+          <li class="nav-item pe-3">
+            <a href="#"
+              class="d-flex align-items-center me-md-auto text-decoration-none header-font-color menu-item-hover">
+              <span class="fs-6 pe-2 font-12">راهنما</span>
+              <i class="fa-solid fa-address-card font-12"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="d-flex align-items-center text-decoration-none header-font-color menu-item-hover">
+              <span class="fs-6 pe-2 font-12">ساخت آزمون</span>
+              <i class="fa-solid fa-address-card font-12"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- پایان منو.ی بالا هدر اول -->
+    <div class="container-fluid container-dashboard p-0 position-relative" dir="rtl">
+      <main class="py-3 px-3 px-lg-4">
+
+        <!-- kebab menu absolute -->
+        <div class="container-kebab-menu position-absolute">
+          <ul class="nav p-0">
+            <div class="kebab-menu">
+              <figure></figure>
+              <figure class="middle"></figure>
+              <p class="cross">x</p>
+              <figure></figure>
+              <ul class="dropdown p-2 shadow">
+                <li>
+                  <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-thin fa-envelope-open fs-4 py-2"></i></a>
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+        <!-- kebab menu absolute -->
+        <!-- logo - search - profile menu -->
+        <!-- لوگوی سایت -->
+        <div class="row">
+          <div class="col-6 col-md-3 col-lg-3 col-xl-2">
+            <a href="#" class="d-block container-logo">
+              <img src="./assets/img/logo.png">
+            </a>
+          </div>
+          <!-- لگوی سایت -->
+          <!-- منوی دسته بندی دروس -->
+          <div class="col-3 col-md-5 col-lg-5 col-xl-5 pe-xl-4 ps-lg-4">
+            <div class="container-search-category h-100 align-items-center d-none d-lg-flex">
+              <div class="course-category position-relative align-items-center d-flex">
+                <ul class="w-100 m-0 p-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center dashboard-font-color" href="#"
+                      data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                      <i class="fa-solid fa-grid ps-2 fs-5"></i>
+                      <span class="fs-5">
+                        دروس
+                      </span>
+                    </a>
+                    <ul class="dropdown-menu shadow-sm text-end border-0">
+                      <li class="dropstart">
+                        <a href="#" class="d-flex align-items-center dropdown-item dropdown-toggle"
+                          data-bs-toggle="dropdown">
+                          هنر
+                          <i class="fa-solid fa-angle-left me-auto"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-hover shadow-sm text-end border-0">
+                          <li><a class="dropdown-item" href="">نقاشی</a></li>
+                          <li><a class="dropdown-item" href="">خوشنویسی</a></li>
+                          <li><a class="dropdown-item" href="">سفالگری</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="d-flex dropdown-item" href="#">فارسی</a></li>
+                      <li><a class="d-flex dropdown-item" href="#">فیزیک</a></li>
+                      <li><a class="d-flex dropdown-item" href="#">ریاضیات</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="search-category w-100 d-flex">
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="جستجوی درس..." aria-label="Search">
+                  <button class="btn d-flex align-items-center" type="submit">
+                    <i class="fa-solid fa-magnifying-glass text-white fs-5"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- پایان منوی دسته بندی دروس -->
+
+          <!-- پروفایل کاربر آبی و سمت موبایل -->
+          <div class="col-3 col-md-4 col-lg-4 col-xl-5">
+            <div class="d-flex flex-row-reverse gap-3 align-items-center">
+              <div class="container-profile-menu d-flex h-100 align-items-center" dir="ltr">
+                <div class="notification-icon pe-3 d-none d-lg-flex">
+                  <i class="fa-regular fa-bell position-relative fs-1">
+                    <span class="badge bg-danger position-absolute iran-sans">3</span>
+                  </i>
+                </div>
+
+                <span class="profile-mobile-btn d-flex d-lg-none text-white align-items-center justify-content-center">
+                  <i class="fa-thin fa-user-large px-2"></i>
+                </span>
+
+                <div class="dropdown rounded-5 px-1 align-items-center d-none d-lg-flex" dir="rtl">
+                  <span
+                    class="profile-mobile-btn-close d-flex d-lg-none align-items-center justify-content-center position-absolute">
+                    <i class="fa-light fa-circle-xmark px-2 fs-5"></i>
+                  </span>
+                  <button class="btn dropdown-toggle text-white align-items-center d-none d-lg-flex" type="button"
+                    id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-thin fa-user-large px-2 fs-5"></i>
+                    <span>سلام، ابوالفضل ابراهیمی</span>
+                    <i class="fa-regular fa-angle-down px-2 fs-5"></i>
+                  </button>
+                  <ul class="dropdown-menu text-end" aria-labelledby="dropdownMenu2">
+                    <li><button class="dropdown-item" type="button">پروفایل کاربر</button></li>
+                    <li><button class="dropdown-item" type="button">خروج</button></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                class="container-search-category show-mobile h-100 align-items-center d-flex d-lg-none position-relative">
+
+                <span class="search-mobile-btn d-flex text-white align-items-center justify-content-center">
+                  <i class="fa-light fa-magnifying-glass"></i>
+                </span>
+
+                <div class="content-menu position-absolute d-none flex-column-reverse p-2">
+                  <div class="course-category position-relative align-items-center mt-2">
+                    <ul class="w-100 m-0 p-0">
+                      <li class="nav-item dropdown">
+                        <ul class="dropdown-menu shadow-sm text-end border-0 show position-relative">
+                          <li class="dropstart">
+                            <a href="#" class="d-flex align-items-center dropdown-item dropdown-toggle"
+                              data-bs-toggle="dropdown">
+                              هنر
+                              <i class="fa-solid fa-angle-left me-auto"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-hover shadow-sm text-end border-0">
+                              <li><a class="dropdown-item" href="">نقاشی</a></li>
+                              <li><a class="dropdown-item" href="">خوشنویسی</a></li>
+                              <li><a class="dropdown-item" href="">سفالگری</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="d-flex dropdown-item mt-1" href="#">فارسی</a></li>
+                          <li><a class="d-flex dropdown-item mt-1" href="#">فیزیک</a></li>
+                          <li><a class="d-flex dropdown-item mt-1" href="#">ریاضیات</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="search-category w-100 d-flex">
+                    <form class="d-flex w-100">
+                      <input class="form-control" type="search" placeholder="جستجوی درس..." aria-label="Search">
+                      <button class="btn d-flex align-items-center" type="submit">
+                        <i class="fa-light fa-magnifying-glass text-white fs-5"></i>
+                      </button>
+                    </form>
+                  </div>
+
+                  <span
+                    class="search-mobile-btn-close d-flex align-items-center justify-content-center position-absolute">
+                    <i class="fa-light fa-circle-xmark px-2 fs-5"></i>
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="notification-icon px-1 d-flex d-lg-none">
+                <i class="fa-thin fa-bell position-relative fs-2">
+                  <span class="badge bg-danger position-absolute iran-sans">3</span>
+                </i>
+              </div>
+            </div>
+          </div>
+          <!-- پایان پروفایل کاربر آبی و سمت موبایل -->
+        </div>
+        <!-- عنوان داشبرد من - عنوان صفحه -->
+        <div class="row pt-5">
+          <div class="col-12 pb-2">
+            <h2 class="h3 g-dashboard font-16">کیف پول</h2>
+          </div>
+          <div class="col-12">
+            <div class="d-flex gap-2">
+              <span class="border-title border-title-blue d-block"></span>
+              <span class="border-title border-title-gray d-block"></span>
+            </div>
+          </div>
+        </div>
+        <!-- پایان قسمت عنوان صفحه -->
+        <!-- show any content -->
+        <!-- Fateme Tekrar -bill-start -->
+        <section class="container-xxl bill">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 wallet-question">
+              <!-- باکس مشاهده آزمون های من -->
+              <a href="#">
+              <div class=" d-flex flex-row justify-content-around p-3 text-white myTests align-items-center br-10">
+                <i class="fa fa-download text-white " ria-hidden=" true"></i>
+                مشاهده آزمون های من
+              </div>
+            </a>
+              <!-- باکس مشاهده گزارش آزمون -->
+              <a href="#">
+              <div class=" d-flex flex-row justify-content-around p-3 module-border-wrap align-items-center c-1976d2 br-10">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                گزارش آزمون
+              </div>
+            </a>
+
+            <!-- باکس مشاهده کیف پول -->
+              <section class=" d-flex flex-row justify-content-around p-2">
+                <div class="align-items-center justify-content-center text-end">
+                  <span class="font-12 fw-bold d-block">مبلغ کیف پول شما
+                  </span>
+                  <span class="font-12">۰.۰۰۰ هزار تومان
+                  </span>
+                </div>
+                <div class="align-items-center justify-content-center">
+                  <img src="./assets/img/coin-icon.png" width="25" height="25" />
+                  <span class="font-12 d-block wallet fw-bold">کیف پول</span>
+                </div>
+              </section>
+
+              <!-- باکس سئوالی داشتم -->
+              <section>
+                <p class="question-title font-16">
+                  ... سوالی داشتم
+                </p>
+                <p class="question-text font-12">من اینجا هستم تا تو را راهنمایی کنم
+                  بنابراین اگر هر سوالی داری
+                  برایم ارسال کن
+                </p>
+                <button class="btn btn-success text-white mb-3" type="submit" id="question-send">
+                  ارسال
+                </button>
+              </section>
+            </div>
+            <div class="col-md-9 col-sm-12 p-0">
+              <!--fateme tekrar tags-start-->
+              <section class="col d-flex flex-row justify-content-between mb-3 mt-2 tagsContainer">
+                <a-make-quiz class="make-quiz  font-12">
+                  انتخاب دانش آموز
+                </a-make-quiz>
+                <a-make-quiz class="make-quiz disabled-tag  font-12">انتخاب درس</a-make-quiz>
+                <a-make-quiz class="make-quiz disabled-tag  font-12">انتخاب مبحث</a-make-quiz>
+                <a-make-quiz class="make-quiz disabled-tag  font-12">انتخاب سوال</a-make-quiz>
+                <a-make-quiz class="make-quiz disabled-tag  font-12">ثبت آزمون</a-make-quiz>
+              </section>
+              <!--fateme tekrar tags-end-->
+
+              <div class="mainLayout bg-f2f2f2">
+                <!--fateme tekrar tabs-start-->
+                <div class="card">
+                  <div class="card-header d-flex flex-row justify-content-between">
+                    <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                      <li class="nav-item tab">
+                        <a class="nav-link active font-14" aria-current="true" data-bs-toggle="tab"
+                          href="#student-select">انتخاب دانش
+                          آموز</a>
+                      </li>
+                      <li class="nav-item tab">
+                        <a class="nav-link font-14" data-bs-toggle="tab" href="#studentGroup-select">انتخاب گروه دانش آموزی</a>
+                      </li>
+                    </ul>
+                    <i class="fa fa-question-circle p-all5 font-28 color-blue curser-point" aria-hidden="true" data-bs-toggle="modal"
+                      data-bs-target="#addStudentModal">
+                    </i>
+                    <!--MODAL-->
+                    <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-body d-flex flex-row justify-content-center">
+                          <img src="./assets/img/addStudent.jpg" width="auto" height="500"
+                            class="p-1 bg-white rounded-1" />
+                          <div class="position-relative">
+                            <img src="./assets/img/close.png" width="auto" height="35"
+                              class="p-0 bg-white rounded-5 position-absolute modal-close curser-point" />
+                          </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--MODAL-->
+                  </div>
+                  <div class="card-body tab-content">
+                    <div class="tab-pane active" id="student-select">
+                      <section class="mx-5">
+                        <section class="d-flex flex-row justify-content-start align-items-center c-1976d2 font-14">
+                          افزودن دانش آموز جدید:
+                          <button class="btn btn-success me-5 px-5 py-3">افزودن</button>
+                        </section>
+                        <hr>
+                        <form>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2 font-14">
+                              انتخاب مقطع تحصیلی:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLink" class="font-14">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                              <ul
+                                class="dropdown-menu feature w-100 p-2 height-100 overflow-auto scrollbar scrollbar-primary"
+                                aria-labelledby="dropdownMenuLink">
+                                <div class="force-overflow">
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="تمامی مقاطع تحصیلی ابتدایی" />
+                                    <label for="lv-name"  class="font-14">تمامی مقاطع تحصیلی ابتدایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="تمامی مقاطع تحصیلی راهنمایی" />
+                                    <label for="lv-name" class="font-14">تمامی مقاطع تحصیلی راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="تمامی مقاطع تحصیلی دبیرستان" />
+                                    <label for="lv-name" class="font-14">تمامی مقاطع تحصیلی دبیرستان</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="اول راهنمایی" />
+                                    <label for="lv-name" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="اول راهنمایی" />
+                                    <label for="lv-name" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="اول راهنمایی" />
+                                    <label for="lv-name" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name" class="mx-1 my-1" onclick="addLevel(this)"
+                                      value="اول راهنمایی" />
+                                    <label for="lv-name" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2 font-14">
+                              انتخاب دانش آموز:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLinkname" class="font-14">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                              </a>
+                              <ul class="dropdown-menu height-100 w-100 overflow-auto scrollbar scrollbar-primary""
+                                aria-labelledby=" dropdownMenuLink" id="ulMenueLinkname">
+                                <div class="force-overflow">
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                      value="وحید رضایی" />
+                                    <label for="st-name" class="font-14">وحید رضایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                      value="سید وحید رضایی" />
+                                    <label for="st-name" class="font-14">سید وحید رضایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                      value="وحید رضایی سروستانی" />
+                                    <label for="st-name" class="font-14">وحید رضایی سروستانی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="st-name" class="mx-1 my-1" onclick="addName(this)"
+                                      value="سید وحید رضایی منش" />
+                                    <label for="st-name" class="font-14">سید وحید رضایی منش</label>
+                                  </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="d-flex flex-row justify-content-end">
+                            <button class="btn btn-primary px-5 py-2" type="submit" id="selects">انتخاب</button>
+                          </section>
+                        </form>
+                        <section class="student-list card px-4 pt-4 pb-1" id="student-list">
+                          <div class="listContainer">
+                            <div class="list-label c-1976d2 font-14">مشاهده لیست دانش آموزان انتخابی</div>
+                            <div class="list-list st-list">
+                              <ul class="list-group overflow-hidden">
+                                <div class="force-overflow w-100 scrollbar scrollbar-primary" id="list-group"></div>
+                              </ul>
+                            </div>
+                          </div>
+                          <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696 font-12" id="report-count">
+                          </section>
+                        </section>
+                      </section>
+                      <section class="d-flex flex-row mt-6 submit-group align-items-center" id="submit-group">
+                        <span class="c-06a971 text-nowrap font-14">نام گروه:</span>
+                        <input placeholder="" class="form-control flex-shrink-1 w-100 mx-4"
+                          id="create-st-group-input" />
+                        <button class="btn btn-success text-white w-100 p-2 m-0 disabled font-14" id="create-st-group"
+                          disabled>تشکیل و انتخاب گروه
+                          دانش آموزی</button>
+                      </section>
+                    </div>
+                    <!-- second tab -->
+                    <div class="tab-pane" id="studentGroup-select">
+                      <section class="mx-5">
+                        <form>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2 font-14">
+                              انتخاب مقطع تحصیلی:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLink-group" class="font-14">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                              <ul
+                                class="dropdown-menu feature w-100 p-2 height-100 overflow-auto scrollbar scrollbar-primary"
+                                aria-labelledby="dropdownMenuLink-group">
+                                <div class="force-overflow">
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی ابتدایی" />
+                                    <label for="lv-name-group" class="font-14">تمامی مقاطع تحصیلی ابتدایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی راهنمایی" />
+                                    <label for="lv-name-group" class="font-14">تمامی مقاطع تحصیلی راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="تمامی مقاطع تحصیلی دبیرستان" />
+                                    <label for="lv-name-group" class="font-14">تمامی مقاطع تحصیلی دبیرستان</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                  <div class="d-flex flex-row justify-content-start align-items-center">
+                                    <input type="checkbox" name="lv-name-group" class="mx-1 my-1"
+                                      onclick="addLevelGroup(this)" value="اول راهنمایی" />
+                                    <label for="lv-name-group" class="font-14">اول راهنمایی</label>
+                                  </div>
+                                </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="dropdownContainer mt-4">
+                            <div class="dropdown-label c-1976d2 font-14">
+                              انتخاب گروه دانش آموزی:
+                            </div>
+                            <div class="dropdown">
+                              <a class="btn btn-light dropdown-toggle d-flex flex-row justify-content-between px-3 py-2"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="dropdownMenuLinkname-group">انتخاب کنید</span>
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                              </a>
+                              <ul class="dropdown-menu height-100 w-100 overflow-auto scrollbar scrollbar-primary"
+                                aria-labelledby=" dropdownMenuLink-group" id="ulMenueLinkname-group">
+                                <div class="force-overflow" id="ulMenueLinkname-group-overflow">
+                                </div>
+                              </ul>
+                            </div>
+                          </section>
+                          <section class="d-flex flex-row justify-content-end">
+                            <button class="btn btn-primary px-5 py-2" type="submit" id="selects-group">انتخاب</button>
+                          </section>
+                        </form>
+                        <section class="student-list card px-4 pt-4 pb-1" id="student-list-group">
+                          <div class="listContainer">
+                            <div class="list-label c-1976d2 font-14">مشاهده لیست گروه های انتخابی</div>
+                            <div class="list-list st-list">
+                              <ul class="list-group overflow-hidden">
+                                <div class="force-overflow w-100 scrollbar scrollbar-primary" id="list-group-group">
+                                </div>
+                              </ul>
+                            </div>
+                          </div>
+                          <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696 font-12"
+                            id="report-count-group">
+                          </section>
+                        </section>
+
+                        <!--MODAL-->
+                        <div class="modal fade" id="seeStudentModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                          aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header border-0 bg-info position-relative text-white font-14">
+                                مشاهده دانش آموزان گروه
+                                <i class=" fa-light fa-times text-white fs-5 bg-info close-btn position-absolute"
+                                  data-bs-dismiss="modal"></i>
+                              </div>
+                              <div class="modal-body d-flex flex-column card m-2">
+                                <div class="list-list st-list">
+                                  <ul class="list-group overflow-hidden">
+                                    <div class="force-overflow w-100 scrollbar scrollbar-primary" id="seeModal"></div>
+                                  </ul>
+                                </div>
+                                <section class="d-flex flex-row justify-content-end mt-3 mb-1 c-969696"
+                                  id="report-count-student">
+                                </section>
+                              </div>
+                              <div class="modal-footer border-0 d-flex flex-row">
+                                <button type="button" class="btn btn-secondary font-14" data-bs-dismiss="modal"
+                                  id="confirmChanges">تایید و بازگشت
+                                </button>
+                                <button type="button" class="btn btn-danger font-14" data-bs-dismiss="modal">بازگشت</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--MODAL-->
+                      </section>
+                      <section class="d-flex mt-6 submit-group justify-content-end" id="submit-group-group">
+                        <button class="btn btn-success text-white p-2 px-5 m-0 disabled" id="create-st-group-group"
+                          disabled>انتخاب گروه
+                          دانش آموزی</button>
+                      </section>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!--MODAL-->
+                <div class="modal fade" id="finalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header border-0 bg-success position-relative text-white font-14">
+                        مشاهده دانش آموزان گروه
+                        <i class=" fa-light fa-times text-white fs-5 bg-success close-btn position-absolute"
+                          data-bs-dismiss="modal"></i>
+                      </div>
+                      <div class="modal-body d-flex flex-column m-2 font-14" id="studentGroupConfirmDataParent">
+                        هنوز گروه دانش آموزی تشکیل نشده است
+                      </div>
+                      <div class="modal-footer border-0 d-flex flex-row">
+                        <button type="button" class="btn btn-success font-12" data-bs-dismiss="modal" id="confirmChanges">تایید
+                          و رفتن به مرحله بعد
+                        </button>
+                        <button type="button" class="btn btn-danger font-12" data-bs-dismiss="modal">بازگشت</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--MODAL-->
+                <button class="btn btn-success mt-2 font-12" id="finalConfirmButton" aria-hidden="true" data-bs-toggle="modal"
+                  data-bs-target="#finalConfirm">تایید نهایی</button>
+              </div>
+              <!--fateme tekrar tabs-end-->
+            </div>
+        </section>
+
+        <!-- Fateme Tekrar - end bill -->
+        <!-- داشبورد من -->
+
+        <div class="shrink-mobile-show-btn position-fixed pointer d-none">
+          <i class="fa-regular fa-circle-user d-block shadow-lg rounded-circle"></i>
+        </div>
+
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/make-quiz.js"></script>
+    <script src="assets/js/script.js"></script>
+    <!--fateme tekrar script for multiselect checkbox start-->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#multiple-checkboxes').multiselect();
+      });  
+    </script>
+    <!--fateme tekrar script for multiselect checkbox end-->
+    <!--fateme tekrar-only surround the div with main-->
+  </div>
+  <!--fateme tekrar-maindiv(for blur)-->
+</body>
+
+</html>

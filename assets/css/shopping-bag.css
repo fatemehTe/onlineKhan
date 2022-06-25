@@ -1,3 +1,5 @@
+@import "dashboard.css";
+
 .prodBorder {
     border-left: 2px solid #c2c2c2;
     height: 100px;
@@ -60,6 +62,13 @@
     min-width: 10px;
 }
 
-
+/* Goltarash - css */
+.wallet-btn{
+    margin-top: 20px;
+    float: right;
+    }
+    .wallet-btn .form-check-input {
+        margin-right: 25px;
+    }
 
 

@@ -15,6 +15,8 @@ const profile_mobile_btn_close = document.querySelector(".container-profile-menu
 const search_mobile_btn = document.querySelector(".container-search-category.show-mobile .search-mobile-btn");
 const search_mobile_btn_close = document.querySelector(".container-search-category.show-mobile .search-mobile-btn-close");
 const search_content_menu = document.querySelector(".container-search-category.show-mobile .content-menu");
+//const step2 = document.querySelector(".sidebar-links li .step2");
+//const step2_menu = document.querySelector(".sidebar-links li .step2-menu");
 const kebab = document.querySelector('.kebab-menu'),
     middle = document.querySelector('.kebab-menu .middle'),
     cross = document.querySelector('.kebab-menu .cross'),
@@ -54,7 +56,17 @@ document.addEventListener("click", (e) => {
     dropdown.classList.remove('active');
 });
 
-kebab.addEventListener('click', (e) => {
+//step2.addEventListener("click", (e) => {
+ //   e.stopPropagation();
+
+//    if (!step2_menu.classList.contains('is-active')) {
+//        step2_menu.classList.add('is-active');
+//    } else {
+//        step2_menu.classList.remove('is-active');
+ //   }
+////});
+
+kebab.addEventListener('click', (e) =>  {
     e.stopPropagation();
 
     if (!middle.classList.contains('active') && !cross.classList.contains('active') && !dropdown.classList.contains('active')) {

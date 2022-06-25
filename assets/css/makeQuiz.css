@@ -1,4 +1,11 @@
-a-make-quiz {
+@import "dashboard.css";
+
+
+.card-header{
+  padding-bottom: 0px;
+}
+
+.make-quiz {
   float: right;
   height: 49px;
   position: relative;
@@ -15,7 +22,7 @@ a-make-quiz {
   z-index: 2;
 }
 
-a-make-quiz:after {
+.make-quiz:after {
   border-end-end-radius: 50px;
   content: "";
   position: absolute;
@@ -32,6 +39,16 @@ a-make-quiz:after {
   transform: rotate(225deg);
   z-index: 1;
 }
+.disabled-tag {
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+  color: #aaaaaa;
+}
+
+.disabled-tag:after{
+  border: 1px solid #f2f2f2 !important;
+  background-color: #f2f2f2 !important;
+}
 
 .myTests {
   background-image: linear-gradient(90deg, #1976d2, #06a971);
@@ -40,8 +57,7 @@ a-make-quiz:after {
 .module-border-wrap {
   border-width: 2px;
   border-style: solid;
-  border-radius: 5px;
-  border-image: linear-gradient(to right, #06a971, #1976d2) 1;
+  /* border-image: linear-gradient(to right, #06a971, #1976d2) 1; */
 }
 
 ul.nav .nav-tabs .card-header-tabs {
@@ -160,4 +176,9 @@ ul.nav .nav-tabs .card-header-tabs {
   .tagsContainer {
     margin-right: 5px
   }
+}
+/* ///////////////////////////////////////// */
+/* GOLTARASH */
+.dropdownContainer .dropdown{
+  font-size: 14px !important;
 }

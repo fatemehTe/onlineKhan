@@ -31,7 +31,6 @@
   <!--*****************************************************-->
   <!-- پیوند به فایل های استایل شیت و اسکریپت -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/dashboard.css" rel="stylesheet">
   <link href="assets/css/wallet.css" rel="stylesheet">
   <link href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
   <!--*****************************************************-->
@@ -43,7 +42,7 @@
 
   <!--fateme tekrar-popupQuestion-start-->
   <div class="popUpPage" id="popUp-page">
-    <img src="./assets/images/close.png" class="popUp-img" id="popUpImg">
+    <img src="./assets/img/close.png" class="popUp-img" id="popUpImg">
     <form>
       <span class="popUp-span" style="position: relative;">:نام
       </span>
@@ -65,7 +64,7 @@
       <span class="shrink-btn border-bottom border-2">
         <span class="link hide fs-5 ">پنل دانش آموزی</span>
         <div class="icon">
-          <img src="./assets/images/ecollapse-menu-icon.png">
+          <img src="./assets/img/ecollapse-menu-icon.png">
         </div>
       </span>
     </div>
@@ -203,7 +202,7 @@
 
       <span class="shrink-btn shrink-mobile-hide-btn d-none">
         <div class="icon">
-          <img src="./assets/images/ecollapse-menu-icon.png">
+          <img src="./assets/img/ecollapse-menu-icon.png">
         </div>
       </span>
     </div>
@@ -283,7 +282,7 @@
         <div class="row">
           <div class="col-6 col-md-3 col-lg-3 col-xl-2">
             <a href="#" class="d-block container-logo">
-              <img src="./assets/images/logo (1).png">
+              <img src="./assets/img/logo.png">
             </a>
           </div>
           <!-- لگوی سایت -->
@@ -439,6 +438,7 @@
         <!-- Fateme Tekrar -bill-start -->
         <section class="container-xxl bill">
           <div class="row">
+            <!-- ستون سمت راست -->
             <div class="col-md-3 col-sm-12 wallet-question">
               <section class=" d-flex flex-row justify-content-around p-2">
                 <div class="align-items-center justify-content-center text-end">
@@ -448,7 +448,7 @@
                   </span>
                 </div>
                 <div class="align-items-center justify-content-center">
-                  <img src="./assets/images/coin-icon.png" width="25" height="25" />
+                  <img src="./assets/img/coin-icon.png" width="25" height="25" />
                   <span class="font-12 d-block wallet fw-bold">کیف پول</span>
                 </div>
               </section>
@@ -465,12 +465,15 @@
                 </button>
               </section>
             </div>
+            <!-- پایان ستون سمت راست -->
+            <!-- شروع قسمت اصلی  -->
             <div class="col-md-9 col-sm-12 p-0">
               <div class="mainLayout bg-f2f2f2">
+<!-- باکس شارژ کیف پول -->
                 <section class="row wallet">
-                  <div class="col-md-8 col-sm-8 col-8">
+                  <div class="col-12 col-lg-8  col-sm-8">
                     <div class="card border-0 justify-content-between d-flex flex-row text-muted align-items-center">
-                      <div class="d-block p-2 text-nowrap fw-bold">مبلغ فعلی کیف پول شما:</div>
+                      <div class="d-block p-2 text-nowrap fw-bold font-14 ">مبلغ فعلی کیف پول شما:</div>
                       <div class="verticalLine"></div>
                       <input class="form-control border-0 flex-shrink-1 text-center" placeholder="۱۵۰.۰۰۰ تومان" />
                       <button class="btn btn-success text-white">
@@ -479,20 +482,21 @@
                     </div>
                   </div>
                 </section>
-                <div class="d-flex flex-row justify-content-between mb-1 mt-4">
+<!-- باکس شارژ کیف پول -->
+                <div class="d-flex flex-row justify-content-between mb-1 mt-5">
                   <h5>تاریخچه کیف پول من</h5>
                   <div class="dropdown" id="dropDown">
                     <button class="btn btn-solid rounded-3 p-2" type="button" id="dropdownMenuButton1"
                       data-bs-toggle="dropdown" aria-expanded="false">
                       <div class="d-flex flex-row align-items-center my-auto">
                         <i class="fa fa-sort-amount-desc ms-2" aria-hidden="true"></i>
-                        <p class="c-1976d2 my-auto">مرتب سازی</p>
+                        <p class="c-1976d2 my-auto font-10">مرتب سازی</p>
                         <i class="fa fa-chevron-down ms-2 me-4" aria-hidden="true" id="chevron"></i>
                       </div>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">انتشار جدید به قدیم</a></li>
-                      <li><a class="dropdown-item" href="#">انتشار قدیم یه جدید</a></li>
+                      <li><a class="dropdown-item font-12" href="#">تراکنش جدید به قدیم</a></li>
+                      <li><a class="dropdown-item font-12" href="#">تراکنش قدیم یه جدید</a></li>
                     </ul>
                   </div>
                 </div>
@@ -514,7 +518,7 @@
                         <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
                             <div class="c-1976d2" id="tr1">شارژ شد</div>
-                            <i class="fa fa-trash fs-5 ps-4" data-bs-toggle="modal"
+                            <i class="fa fa-trash fs-5 ps-4 curser-point" data-bs-toggle="modal"
                               data-bs-target="#exampleModalDelete1"></i>
                           </div>
                         </td>
@@ -526,7 +530,7 @@
                         <td class="p-4">
                           <div class="d-flex flex-row justify-content-between">
                             <div class="c-1976d2" id="tr2">شارژ شد</div>
-                            <i class="fa fa-trash fs-5 ps-4" data-bs-toggle="modal"
+                            <i class="fa fa-trash fs-5 ps-4 curser-point" data-bs-toggle="modal"
                               data-bs-target="#exampleModalDelete2"></i>
                           </div>
                         </td>
@@ -543,7 +547,7 @@
                             data-bs-dismiss="modal"></i>
                         </div>
                         <div class="modal-body">
-                          آیا از حذف ردیف مطمین هستید؟
+                          آیا از حذف ردیف مطمئن هستید؟
                         </div>
                         <div class="modal-footer border-0 d-flex flex-row justify-content-between">
                           <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="deleteFromُTable1">حذف
@@ -566,7 +570,7 @@
                             data-bs-dismiss="modal"></i>
                         </div>
                         <div class="modal-body">
-                          آیا از حذف ردیف مطمین هستید؟
+                          آیا از حذف ردیف مطمئن هستید؟
                         </div>
                         <div class="modal-footer border-0 d-flex flex-row justify-content-between">
                           <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="deleteFromُTable2">حذف
@@ -580,6 +584,7 @@
                   </div>
                   <!--Modal delete-->
                 </section>
+                <!-- pagination -->
                 <section class="mt-4 mb-0">
                   <div class="d-flex flex-row justify-content-center">
                     <div class="bg-danger text-white m-1 pagination justify-content-center my-auto">۱</div>
@@ -588,11 +593,13 @@
                     <div class="m-1 pagination justify-content-center my-auto">۴</div>
                     <div class="m-1 pagination justify-content-center my-auto">...</div>
                     <div class="m-1 pagination justify-content-center my-auto">۱۲</div>
-                    <div class="m-1 bg-d9d9d9 p-1 justify-content-center rounded-4 my-auto">بعدی >></div>
+                    <div class="m-1 bg-d9d9d9 p-1 justify-content-center rounded-4 my-auto curser-point">بعدی >></div>
                   </div>
                 </section>
+                <!-- pagination -->
               </div>
             </div>
+            <!-- پایان قسمت اصلی -->
           </div>
         </section>
 
